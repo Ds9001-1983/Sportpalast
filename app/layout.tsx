@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Nunito_Sans, Montserrat, JetBrains_Mono } from "next/font/google";
 import { LenisProvider } from "@/components/animations/LenisProvider";
 import { SoundProvider } from "@/components/providers/SoundProvider";
-import { CursorProvider } from "@/components/providers/CursorProvider";
 import { SoundToggle } from "@/components/layout/SoundToggle";
-import { Cursor } from "@/components/ui/Cursor";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import "./globals.css";
 
@@ -75,14 +73,11 @@ export default function RootLayout({
     >
       <body className="bg-bg text-fg antialiased">
         <SoundProvider>
-          <CursorProvider>
-            <LenisProvider>
-              <ScrollProgress />
-              {children}
-              <SoundToggle />
-              <Cursor />
-            </LenisProvider>
-          </CursorProvider>
+          <LenisProvider>
+            <ScrollProgress />
+            {children}
+            <SoundToggle />
+          </LenisProvider>
         </SoundProvider>
       </body>
     </html>

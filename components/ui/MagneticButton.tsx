@@ -3,7 +3,6 @@
 import { forwardRef, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
-import { useCursor } from "@/components/providers/CursorProvider";
 import { useSound } from "@/components/providers/SoundProvider";
 
 type Variant = "primary" | "ghost" | "outline";
@@ -29,7 +28,6 @@ export const MagneticButton = forwardRef<HTMLElement, Props>(function MagneticBu
 ) {
   const localRef = useRef<HTMLElement>(null);
   const ref = (forwardedRef as React.RefObject<HTMLElement>) ?? localRef;
-  const { setState } = useCursor();
   const { play } = useSound();
 
   useEffect(() => {
@@ -68,11 +66,7 @@ export const MagneticButton = forwardRef<HTMLElement, Props>(function MagneticBu
     };
   }, [ref, strength]);
 
-  const handleEnter = () => {
-    setState("hover");
-    play("hover");
-  };
-  const handleLeave = () => setState("default");
+  const handleEnter = () => play("hover");
   const handleClick = () => play("click");
 
   const base = cn(
@@ -88,7 +82,6 @@ export const MagneticButton = forwardRef<HTMLElement, Props>(function MagneticBu
         ref={ref as React.RefObject<HTMLAnchorElement>}
         className={base}
         onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
         onClick={handleClick}
         {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
@@ -102,7 +95,6 @@ export const MagneticButton = forwardRef<HTMLElement, Props>(function MagneticBu
       ref={ref as React.RefObject<HTMLButtonElement>}
       className={base}
       onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
       onClick={handleClick}
       {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >

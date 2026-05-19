@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { KontaktForm } from "@/components/sections/kontakt/KontaktForm";
+import { MapEmbed } from "@/components/sections/kontakt/MapEmbed";
 import { CONTACT } from "@/lib/content/contact";
 
 export const metadata: Metadata = {
@@ -80,6 +81,11 @@ export default function KontaktPage() {
               ]}
             />
           </aside>
+        </div>
+
+        <div className="container-grid mt-20">
+          <p className="eyebrow mb-4">So findest du uns</p>
+          <MapEmbed />
         </div>
       </section>
     </>

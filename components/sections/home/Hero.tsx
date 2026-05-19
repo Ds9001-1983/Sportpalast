@@ -1,16 +1,25 @@
+import Image from "next/image";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { HeroVideoShader } from "@/components/webgl/HeroVideoShader";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Pill } from "@/components/ui/Pill";
+import { IMG } from "@/lib/content/media";
 
 export function Hero() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden">
-      <HeroVideoShader
-        src={{ mp4: "/video/hero-loop.mp4", webm: "/video/hero-loop.webm" }}
-        poster="/images/hero/hero-poster.jpg"
-      />
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={IMG.hero.src}
+          alt={IMG.hero.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-bg/40 via-bg/55 to-bg" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,172,167,0.18),transparent_60%)]" />
+      </div>
 
       <div className="container-grid relative flex min-h-[100svh] flex-col justify-end pb-20 pt-40 lg:pb-28">
         <div className="flex items-center gap-3">

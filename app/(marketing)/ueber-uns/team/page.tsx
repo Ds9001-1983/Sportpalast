@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { TEAM } from "@/lib/content/team";
+import { TEAM_PHOTOS } from "@/lib/content/media";
 
 export const metadata: Metadata = {
   title: "Team",
@@ -34,26 +36,38 @@ export default function TeamPage() {
               <div key={g.key}>
                 <p className="eyebrow mb-6">{g.label}</p>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {members.map((m, i) => (
-                    <RevealOnScroll key={m.slug} delay={i * 0.03}>
-                      <div className="group aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-bg-elevated/40 p-6 transition-colors hover:border-brand">
-                        <div className="flex h-full flex-col justify-between">
-                          <div
-                            aria-hidden
-                            className="h-16 w-16 rounded-full bg-[radial-gradient(circle,rgba(0,172,167,0.3),transparent_70%)] transition-transform group-hover:scale-110"
-                          />
-                          <div>
+                  {members.map((m, i) => {
+                    const photo = TEAM_PHOTOS[m.slug];
+                    return (
+                      <RevealOnScroll key={m.slug} delay={i * 0.03}>
+                        <figure className="group relative aspect-4/5 overflow-hidden rounded-2xl border border-border bg-bg-elevated/60">
+                          {photo ? (
+                            <Image
+                              src={photo}
+                              alt={`${m.name} — ${m.role}`}
+                              fill
+                              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                          ) : (
+                            <div
+                              aria-hidden
+                              className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,172,167,0.35),transparent_60%)]"
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/40 to-transparent" />
+                          <figcaption className="absolute inset-x-0 bottom-0 p-5">
                             <p className="font-display text-lg font-bold leading-tight">
                               {m.name}
                             </p>
-                            <p className="mt-1 text-sm text-fg-muted">
+                            <p className="mt-1 text-xs uppercase tracking-[0.15em] text-fg-muted">
                               {m.role}
                             </p>
-                          </div>
-                        </div>
-                      </div>
-                    </RevealOnScroll>
-                  ))}
+                          </figcaption>
+                        </figure>
+                      </RevealOnScroll>
+                    );
+                  })}
                 </div>
               </div>
             );

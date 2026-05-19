@@ -9,8 +9,8 @@ export function CtaBanner() {
         aria-hidden
         className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(0,172,167,0.18),transparent_70%)]"
       />
-      <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-px bg-linear-to-r from-transparent via-brand/40 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-linear-to-r from-transparent via-brand/40 to-transparent" />
 
       <div className="container-grid text-center">
         <p className="eyebrow mb-6">Komm vorbei</p>

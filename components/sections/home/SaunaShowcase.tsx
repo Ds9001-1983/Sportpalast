@@ -1,23 +1,25 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { IMG } from "@/lib/content/media";
 
 export function SaunaShowcase() {
   return (
     <section className="relative overflow-hidden py-32 lg:py-40">
       <div className="container-grid">
         <div className="relative grid overflow-hidden rounded-3xl border border-border bg-bg-elevated lg:grid-cols-[1.2fr_1fr]">
-          <div
-            aria-hidden
-            className="relative min-h-[340px] overflow-hidden lg:min-h-[560px]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 70% 30%, rgba(0,172,167,0.25), transparent 60%), linear-gradient(180deg, #141417, #0a0a0b)",
-            }}
-          >
-            <div className="absolute inset-0 grain" />
-            <p className="absolute bottom-8 left-8 font-mono text-xs uppercase tracking-[0.3em] text-fg-subtle">
+          <div className="relative min-h-[340px] overflow-hidden lg:min-h-[560px]">
+            <Image
+              src={IMG.sauna.src}
+              alt={IMG.sauna.alt}
+              fill
+              sizes="(min-width: 1024px) 60vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-bg/70 via-bg/20 to-transparent" />
+            <p className="absolute bottom-8 left-8 font-mono text-xs uppercase tracking-[0.3em] text-fg">
               Wellness 250 m²
             </p>
           </div>

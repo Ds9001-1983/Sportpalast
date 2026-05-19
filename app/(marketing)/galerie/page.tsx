@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { VirtualTour } from "@/components/sections/galerie/VirtualTour";
+import { GALLERY } from "@/lib/content/media";
 
 export const metadata: Metadata = {
   title: "Galerie & Rundgang",
@@ -8,17 +11,17 @@ export const metadata: Metadata = {
     "Bilder und virtueller Rundgang durch den Sportpalast Lindlar — Trainingsfläche, Sauna, Lounge.",
 };
 
-const tiles = [
-  { label: "Glaspalast — Außenansicht", area: "lg:row-span-2 lg:col-span-2" },
-  { label: "Trainingsfläche", area: "" },
-  { label: "Cardio-Bereich", area: "" },
-  { label: "Freihantelbereich", area: "lg:col-span-2" },
-  { label: "Kursraum", area: "" },
-  { label: "EGYM Geräte", area: "" },
-  { label: "Sauna Indoor", area: "" },
-  { label: "Sauna Outdoor", area: "lg:col-span-2" },
-  { label: "Ruheraum", area: "" },
-  { label: "Lounge & Café", area: "" },
+const spans = [
+  "lg:row-span-2 lg:col-span-2",
+  "",
+  "",
+  "lg:col-span-2",
+  "",
+  "",
+  "",
+  "lg:col-span-2",
+  "",
+  "",
 ];
 
 export default function GaleriePage() {
@@ -27,26 +30,30 @@ export default function GaleriePage() {
       <PageHero
         eyebrow="Galerie"
         title="Schau dich um."
-        intro="Lass die Bilder sprechen — und plane danach deinen Besuch."
+        intro="Lass die Bilder sprechen — und plane danach deinen Besuch im Sportpalast."
       />
 
       <section className="pb-20">
         <div className="container-grid">
-          <div className="grid auto-rows-[200px] gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[260px]">
-            {tiles.map((t, i) => (
-              <RevealOnScroll key={t.label} delay={i * 0.03} className={t.area}>
-                <figure
-                  className="group relative h-full overflow-hidden rounded-2xl border border-border bg-bg-elevated"
-                  style={{
-                    backgroundImage: `radial-gradient(circle at ${
-                      30 + (i % 4) * 20
-                    }% ${20 + (i % 3) * 20}%, rgba(0,172,167,0.25), transparent 60%), linear-gradient(180deg, #141417, #0a0a0b)`,
-                  }}
-                >
-                  <span aria-hidden className="absolute inset-0 grain" />
-                  <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-xs uppercase tracking-[0.2em] text-fg-subtle transition-colors group-hover:text-brand">
-                    <span>{t.label}</span>
-                    <span className="font-mono">
+          <div className="grid auto-rows-[220px] gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[280px]">
+            {GALLERY.map((img, i) => (
+              <RevealOnScroll
+                key={img.src}
+                delay={i * 0.03}
+                className={spans[i] ?? ""}
+              >
+                <figure className="group relative h-full overflow-hidden rounded-2xl border border-border bg-bg-elevated">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-bg/80 via-transparent to-transparent" />
+                  <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-xs uppercase tracking-[0.2em] text-fg transition-colors">
+                    <span>{img.alt}</span>
+                    <span className="font-mono text-fg-subtle">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </figcaption>
@@ -54,14 +61,24 @@ export default function GaleriePage() {
               </RevealOnScroll>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 rounded-3xl border border-dashed border-border bg-bg-elevated/30 p-8 text-center">
-            <p className="eyebrow mb-2">Virtueller Rundgang</p>
-            <p className="text-fg-muted">
-              360°-Tour folgt — Insta360-Aufnahmen sind in Arbeit. Bis dahin:
-              Komm einfach vorbei.
+      <section className="pb-32">
+        <div className="container-grid">
+          <div className="mb-8 flex items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow mb-3">Virtueller Rundgang</p>
+              <h2 className="text-h2 max-w-[18ch] font-display font-bold">
+                Lauf durch den Glaspalast — von zu Hause.
+              </h2>
+            </div>
+            <p className="hidden max-w-xs text-sm text-fg-muted md:block">
+              Klicken und ziehen, um dich umzuschauen. 360°-Aufnahmen vom Studio
+              folgen in voller Auflösung.
             </p>
           </div>
+          <VirtualTour />
         </div>
       </section>
     </>

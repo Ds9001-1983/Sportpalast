@@ -1,8 +1,10 @@
+import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { NumberCounter } from "@/components/ui/NumberCounter";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SplitHeading } from "@/components/ui/SplitHeading";
+import { IMG } from "@/lib/content/media";
 
 const features = [
   "3D-Kameratechnologie analysiert dich in 2 Minuten",
@@ -17,7 +19,15 @@ export function EgymFeature() {
       <div className="container-grid grid items-center gap-16 lg:grid-cols-2">
         <RevealOnScroll>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-bg-elevated">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,172,167,0.35),transparent_60%)]" />
+            <Image
+              src={IMG.egym.src}
+              alt={IMG.egym.alt}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/70 to-bg/10" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,172,167,0.25),transparent_60%)]" />
             <div className="absolute inset-0 flex flex-col justify-end p-10">
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-brand">
                 Smart Strength
