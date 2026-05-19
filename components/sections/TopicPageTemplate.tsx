@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { PageHero } from "./PageHero";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -9,7 +8,7 @@ interface Props {
   title: string;
   intro: string;
   highlights?: { title: string; body: string }[];
-  body?: ReactNode;
+  body?: string[];
   cta?: { label: string; href: string };
 }
 
@@ -45,7 +44,19 @@ export function TopicPageTemplate({
         </section>
       )}
 
-      {body && <section className="py-12">{body}</section>}
+      {body && body.length > 0 && (
+        <section className="py-12">
+          <div className="container-grid">
+            <RevealOnScroll>
+              <div className="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-fg-muted">
+                {body.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+      )}
 
       {cta && (
         <section className="py-24">

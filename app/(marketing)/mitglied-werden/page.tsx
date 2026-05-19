@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { PRICES } from "@/lib/content/prices";
+import { Faq } from "@/components/sections/mitglied-werden/Faq";
+import { PRICES, STARTER_PACKAGE } from "@/lib/content/prices";
 import { eur } from "@/lib/utils/format";
 
 export const metadata: Metadata = {
@@ -89,6 +90,60 @@ export default async function MitgliedWerdenPage({
               </RevealOnScroll>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container-grid">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <p className="eyebrow mb-3">Starterpaket</p>
+              <h2 className="text-h2 font-display font-bold">
+                {eur(STARTER_PACKAGE)} einmalig — das steckt drin.
+              </h2>
+              <p className="mt-4 text-fg-muted">
+                Damit du nicht ins kalte Wasser springen musst, bekommst du
+                beim Start einmalig alles, was du für die ersten Wochen
+                brauchst — Beratung, Plan, Material.
+              </p>
+            </div>
+            <ul className="grid gap-3 self-start rounded-3xl border border-border bg-bg-elevated/40 p-8">
+              {[
+                "Mitgliedsausweis & Transponder-Chip",
+                "Trinkflasche",
+                "Persönliche Trainingseinweisung",
+                "InBody/SECA-Körperanalyse",
+                "Individueller Trainingsplan",
+                "Beratung zur Tarifwahl",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-fg-muted"
+                >
+                  <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-brand text-brand">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-20">
+        <div className="container-grid">
+          <div className="mb-10 max-w-2xl">
+            <p className="eyebrow mb-3">Häufige Fragen</p>
+            <h2 className="text-h2 font-display font-bold">
+              Alles Wichtige zur Mitgliedschaft.
+            </h2>
+            <p className="mt-4 text-fg-muted">
+              Laufzeit, Kündigung, Beitrag, Pausierung — die Antworten, die
+              die meisten vorher wissen wollen.
+            </p>
+          </div>
+          <Faq />
         </div>
       </section>
 

@@ -33,7 +33,7 @@ const items = [
     body: "Über 30 Kurse pro Woche — von Yoga bis HOT IRON™.",
     href: "/fitness/fitnesskurse",
     icon: Flame,
-    image: IMG.app_lounge,
+    image: IMG.courses,
   },
   {
     title: "Sauna & Wellness",

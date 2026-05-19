@@ -53,6 +53,12 @@ export const IMG = {
     w: 2048,
     h: 854,
   },
+  courses: {
+    src: `${CDN}/bodycross-kurs.jpg`,
+    alt: "Fitnesskurs im Sportpalast",
+    w: 1920,
+    h: 1280,
+  },
 } as const;
 
 export const GALLERY: { src: string; alt: string }[] = [
