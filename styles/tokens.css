@@ -1,0 +1,59 @@
+/* Sportpalast Lindlar — Design Tokens
+ * Single source of truth for the brand. Brand teal (#00ACA7) is the only
+ * chromatic accent — extracted from the official logo SVG and confirmed in
+ * the live site's CSS (6× occurrence). Fonts (Montserrat + Nunito Sans)
+ * are the existing brand typefaces; both are kept to preserve CI.
+ */
+
+:root {
+  /* Brand */
+  --color-brand-teal: #00aca7;
+  --color-brand-teal-bright: #00d4cd;
+  --color-brand-teal-soft: #0e3d3c;
+
+  /* Neutrals — dark-first */
+  --color-bg: #0a0a0b;
+  --color-bg-elevated: #141417;
+  --color-bg-glass: rgba(20, 20, 23, 0.6);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-fg: #f5f5f4;
+  --color-fg-muted: rgba(245, 245, 244, 0.7);
+  --color-fg-subtle: rgba(245, 245, 244, 0.45);
+
+  /* Functional */
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  /* Fluid type scale */
+  --text-display: clamp(3.5rem, 8vw + 1rem, 9rem);
+  --text-h1: clamp(2.5rem, 5vw + 1rem, 5.5rem);
+  --text-h2: clamp(2rem, 3vw + 1rem, 3.75rem);
+  --text-h3: clamp(1.5rem, 2vw + 0.5rem, 2.25rem);
+  --text-h4: clamp(1.25rem, 1vw + 0.75rem, 1.5rem);
+  --text-body: clamp(1rem, 0.6vw + 0.9rem, 1.125rem);
+  --text-small: 0.875rem;
+  --text-micro: 0.75rem;
+
+  /* Easings */
+  --ease-power: cubic-bezier(0.77, 0, 0.18, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Durations */
+  --dur-fast: 200ms;
+  --dur-base: 400ms;
+  --dur-slow: 800ms;
+
+  /* Layout */
+  --container-max: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-pad-y: clamp(4rem, 10vw, 9rem);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+}
