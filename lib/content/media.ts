@@ -87,5 +87,5 @@ export const TEAM_PHOTOS: Record<string, string> = {
   "thomas-buergerhausen": `${CDN}/thomas-buergerhausen.jpeg`,
   "marie-bork": `${CDN}/marie02.jpg`,
   "jil-kamml": `${CDN}/Jill.jpg`,
-  // wolfgang-feykens: noch kein passendes Live-Bild
+  "wolfgang-feykens": `${CDN}/Henry-2-.jpg`,
 };

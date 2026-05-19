@@ -3,7 +3,6 @@ import { ImageResponse } from "next/og";
 export const alt = "Sportpalast Lindlar — Dein Fitnessstudio im Oberbergischen";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const runtime = "edge";
 
 export default function OG() {
   return new ImageResponse(
@@ -16,8 +15,9 @@ export default function OG() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background:
-            "radial-gradient(circle at 20% 20%, rgba(0,172,167,0.35), transparent 60%), #0a0a0b",
+          backgroundImage:
+            "radial-gradient(circle at 20% 20%, rgba(0,172,167,0.35), transparent 60%)",
+          backgroundColor: "#0a0a0b",
           color: "#f5f5f4",
           fontFamily: "system-ui",
         }}
