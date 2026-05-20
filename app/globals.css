@@ -192,6 +192,14 @@
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Sicherheitsnetz: Reveal-Inhalte müssen sichtbar bleiben, auch wenn
+     das JS sie nicht enthüllt (reduced-motion oder JS-Ausfall). */
+  [data-word],
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Custom scrollbar — subtle brand teal accent */

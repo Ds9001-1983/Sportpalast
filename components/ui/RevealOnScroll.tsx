@@ -27,25 +27,40 @@ export function RevealOnScroll({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reveal = (animate = true) => {
+      el.style.transitionDelay = animate ? `${delay}s` : "0s";
       el.style.opacity = "1";
-      el.style.transform = "none";
+      el.style.transform = "translate3d(0,0,0)";
+    };
+
+    // reduced-motion ODER kein IntersectionObserver -> sofort sichtbar
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      typeof IntersectionObserver === "undefined"
+    ) {
+      reveal(false);
       return;
     }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          el.style.transitionDelay = `${delay}s`;
-          el.style.opacity = "1";
-          el.style.transform = "translate3d(0,0,0)";
+          reveal(true);
           observer.disconnect();
         });
       },
       { threshold },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Fail-safe: falls der Observer nie feuert, nach 1,2 s garantiert sichtbar
+    const fallback = window.setTimeout(() => reveal(true), 1200);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [delay, threshold]);
 
   const initial =
@@ -60,6 +75,7 @@ export function RevealOnScroll({
   return (
     <Tag
       ref={ref}
+      data-reveal
       className={cn(
         "opacity-0 transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)] will-change-[opacity,transform]",
         className,

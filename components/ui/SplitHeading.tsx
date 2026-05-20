@@ -25,8 +25,21 @@ export function SplitHeading({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      el.style.opacity = "1";
+    const words = el.querySelectorAll<HTMLSpanElement>("[data-word]");
+    const reveal = (animate = true) => {
+      words.forEach((w, i) => {
+        w.style.transitionDelay = animate ? `${delay + i * stagger}s` : "0s";
+        w.style.transform = "translateY(0)";
+        w.style.opacity = "1";
+      });
+    };
+
+    // reduced-motion ODER kein IntersectionObserver -> sofort sichtbar
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      typeof IntersectionObserver === "undefined"
+    ) {
+      reveal(false);
       return;
     }
 
@@ -34,19 +47,21 @@ export function SplitHeading({
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const words = el.querySelectorAll<HTMLSpanElement>("[data-word]");
-          words.forEach((w, i) => {
-            w.style.transitionDelay = `${delay + i * stagger}s`;
-            w.style.transform = "translateY(0)";
-            w.style.opacity = "1";
-          });
+          reveal(true);
           observer.disconnect();
         });
       },
       { threshold: 0.2 },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Fail-safe: falls der Observer nie feuert, nach 1,2 s garantiert sichtbar
+    const fallback = window.setTimeout(() => reveal(true), 1200);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [delay, stagger]);
 
   const words = children.split(" ");
@@ -60,7 +75,8 @@ export function SplitHeading({
         <span key={i} className="inline-flex overflow-hidden align-baseline">
           <span
             data-word
-            className="inline-block translate-y-full opacity-0 transition-[transform,opacity] duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)]"
+            className="inline-block opacity-0 transition-[transform,opacity] duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)]"
+            style={{ transform: "translateY(110%)" }}
           >
             {word}
             {i < words.length - 1 && " "}
