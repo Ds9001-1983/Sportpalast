@@ -3,12 +3,18 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { PRICES, type PlanSlug, type DurationKey } from "@/lib/content/prices";
+import {
+  PRICES,
+  SERVICE_FEE,
+  type PlanSlug,
+  type DurationKey,
+} from "@/lib/content/prices";
 import { calculatePrice } from "@/lib/pricing";
 import { eur } from "@/lib/utils/format";
 import { cn } from "@/lib/utils/cn";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { NumberCounter } from "@/components/ui/NumberCounter";
+import { Pill } from "@/components/ui/Pill";
 
 export function TarifKonfigurator({
   initialPlan = "club",
@@ -64,7 +70,14 @@ export function TarifKonfigurator({
                     )}
                   >
                     <div>
-                      <p className="font-display text-xl font-bold">{p.name}</p>
+                      <div className="flex items-center gap-2">
+                        <p className="font-display text-xl font-bold">{p.name}</p>
+                        {p.badge && (
+                          <Pill className="border-brand/40 text-brand">
+                            {p.badge}
+                          </Pill>
+                        )}
+                      </div>
                       <p className="text-sm text-fg-muted">{p.tagline}</p>
                     </div>
                     <div
@@ -148,6 +161,11 @@ export function TarifKonfigurator({
                 <Row label="Beitrag erstes Jahr">{eur(quote.totalFirstYear)}</Row>
                 <Row label="Gesamt Laufzeit">{eur(quote.totalCommitment)}</Row>
               </dl>
+
+              <p className="mt-4 text-xs text-fg-subtle">
+                Zzgl. {eur(SERVICE_FEE)} Servicepauschale alle 6 Monate (ab dem
+                6. Monat).
+              </p>
 
               <div className="mt-8">
                 <MagneticButton

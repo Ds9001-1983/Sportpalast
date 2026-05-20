@@ -45,6 +45,11 @@ export function PreiseTeaser() {
                         )}
                       >
                         <div>
+                          {p.badge && (
+                            <span className="mb-2 inline-flex items-center rounded-full bg-accent px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-white">
+                              {p.badge}
+                            </span>
+                          )}
                           <h3
                             className={cn(
                               "font-display font-black uppercase leading-[0.95] tracking-[-0.02em]",

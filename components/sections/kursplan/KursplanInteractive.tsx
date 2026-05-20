@@ -115,6 +115,21 @@ export function KursplanInteractive() {
                             {s.start} – {s.end}
                           </p>
                           <p className="mt-1 text-sm font-medium">{c.name}</p>
+                          <span
+                            className="mt-1 flex items-center gap-1"
+                            title={`Intensität ${c.intensity} von 3`}
+                            aria-label={`Intensität ${c.intensity} von 3`}
+                          >
+                            {[1, 2, 3].map((lvl) => (
+                              <span
+                                key={lvl}
+                                className={cn(
+                                  "h-1 w-3 rounded-full",
+                                  lvl <= c.intensity ? "bg-brand" : "bg-border-strong",
+                                )}
+                              />
+                            ))}
+                          </span>
                           {s.note && (
                             <p className="mt-0.5 text-[0.7rem] text-brand">
                               {s.note}
