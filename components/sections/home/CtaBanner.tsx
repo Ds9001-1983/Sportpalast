@@ -1,36 +1,57 @@
-import { ArrowRight } from "lucide-react";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Asterisk } from "@/components/ui/Asterisk";
+import { RoundIconButton } from "@/components/ui/RoundIconButton";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden py-32 lg:py-48">
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(0,172,167,0.18),transparent_70%)]"
-      />
-      <div className="absolute inset-x-0 top-0 -z-10 h-px bg-linear-to-r from-transparent via-brand/40 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-linear-to-r from-transparent via-brand/40 to-transparent" />
-
-      <div className="container-grid text-center">
-        <p className="eyebrow mb-6">Komm vorbei</p>
-        <SplitHeading
-          as="h2"
-          className="text-display mx-auto max-w-[16ch] font-display font-black leading-[0.95]"
-        >
-          Probiere uns aus. Bleib, wenn's passt.
-        </SplitHeading>
-        <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-fg-muted">
-          Probetraining vereinbaren, durch den Glaspalast laufen, einen Espresso
-          in der Lounge trinken. Entscheide danach.
-        </p>
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-          <MagneticButton href="/mitglied-werden">
-            Mitglied werden <ArrowRight size={16} />
-          </MagneticButton>
-          <MagneticButton href="/kontakt" variant="outline">
-            Probetraining buchen
-          </MagneticButton>
+    <section className="bg-bg py-24 lg:py-32">
+      <div className="container-grid">
+        <div className="grid items-end gap-10 border-t border-border pt-16 lg:grid-cols-[1fr_auto] lg:pt-24">
+          <div className="flex items-start gap-6">
+            <Asterisk
+              size={92}
+              spinning
+              className="hidden shrink-0 lg:block"
+            />
+            <SplitHeading
+              as="h2"
+              className="text-display max-w-[18ch] font-display font-black uppercase leading-[0.9] tracking-[-0.04em]"
+            >
+              Hol dir deinen Fit Lifestyle — einfach und gut gelaunt.
+            </SplitHeading>
+          </div>
+          <Link href="/mitglied-werden" aria-label="Mitglied werden">
+            <RoundIconButton
+              direction="up-right"
+              variant="outline"
+              surface="dark"
+              size="lg"
+              ariaLabel="Mitglied werden"
+              className="size-24 border-dashed"
+            />
+          </Link>
+        </div>
+        <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-center">
+          <p className="max-w-xl text-lg leading-relaxed text-fg-muted">
+            Probetraining vereinbaren, durch den Glaspalast laufen, einen Espresso
+            in der Lounge trinken. Entscheide danach.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 lg:justify-end">
+            <Link
+              href="/mitglied-werden"
+              className="inline-flex items-center gap-2 rounded-pill bg-accent px-7 py-3.5 font-display text-sm font-bold uppercase tracking-[0.12em] text-white hover:bg-accent-bright"
+            >
+              Mitglied werden <ArrowUpRight size={16} />
+            </Link>
+            <Link
+              href="/kontakt"
+              className="inline-flex items-center gap-2 rounded-pill border border-border-strong px-7 py-3.5 font-display text-sm font-bold uppercase tracking-[0.12em] text-fg hover:border-accent hover:text-accent"
+            >
+              Probetraining buchen
+            </Link>
+          </div>
         </div>
       </div>
     </section>

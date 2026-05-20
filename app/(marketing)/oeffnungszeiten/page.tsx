@@ -65,7 +65,7 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-border bg-bg-elevated/40 p-8 lg:p-10">
+    <div className="rounded-frame border border-border bg-bg-elevated p-8 lg:p-10">
       <p className="eyebrow mb-6">{title}</p>
       <ul className="divide-y divide-border">{children}</ul>
     </div>

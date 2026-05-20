@@ -5,7 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 import { useSound } from "@/components/providers/SoundProvider";
 
-type Variant = "primary" | "ghost" | "outline";
+type Variant = "primary" | "ghost" | "outline" | "pill-solid" | "pill-ink";
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   href?: string;
@@ -20,6 +20,10 @@ const variants: Record<Variant, string> = {
   ghost: "text-fg hover:text-brand",
   outline:
     "border border-border-strong text-fg hover:border-brand hover:text-brand",
+  "pill-solid":
+    "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-bright)]",
+  "pill-ink":
+    "bg-ink text-cream hover:bg-[var(--color-accent-dark)]",
 };
 
 export const MagneticButton = forwardRef<HTMLElement, Props>(function MagneticButton(

@@ -38,7 +38,7 @@ export default function FitnessOverviewPage() {
                     <h3 className="text-h4 font-display font-bold leading-tight">
                       {c.label}
                     </h3>
-                    <span className="mt-6 inline-flex items-center gap-1 text-xs uppercase tracking-[0.2em] text-fg-muted transition-colors group-hover:text-brand">
+                    <span className="mt-6 inline-flex items-center gap-1 text-xs uppercase tracking-[0.2em] text-fg-muted transition-colors group-hover:text-accent">
                       Mehr <ArrowUpRight size={12} />
                     </span>
                   </div>

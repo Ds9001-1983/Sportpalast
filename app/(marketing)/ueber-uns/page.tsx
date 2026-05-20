@@ -138,7 +138,7 @@ export default function UeberUnsPage() {
           <div className="grid gap-4 md:grid-cols-2">
             {values.map((v, i) => (
               <RevealOnScroll key={v.title} delay={i * 0.05}>
-                <div className="rounded-2xl border border-border bg-bg-elevated/40 p-8">
+                <div className="rounded-card border border-border bg-bg-elevated p-8">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand">
                     {String(i + 1).padStart(2, "0")}
                   </p>
@@ -222,7 +222,7 @@ export default function UeberUnsPage() {
           <div className="mt-12">
             <Link
               href="/ueber-uns/team"
-              className="group inline-flex items-center gap-2 text-sm text-fg-muted hover:text-brand"
+              className="group inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent"
             >
               Gesamtes Team kennenlernen
               <ArrowRight

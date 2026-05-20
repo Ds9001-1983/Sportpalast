@@ -26,6 +26,22 @@
   --color-warning: #fbbf24;
   --color-error: #f87171;
 
+  /* Light surfaces — Rhinos-Editorial-Mix (cream, nicht grell-weiß, passt zu Teal) */
+  --color-cream: #f4f1ec;
+  --color-cream-bg: #ebe7df;
+  --color-cream-elevated: #ffffff;
+  --color-ink: #0a0a0b;
+  --color-ink-muted: rgba(10, 10, 11, 0.65);
+  --color-ink-subtle: rgba(10, 10, 11, 0.45);
+  --color-ink-border: rgba(10, 10, 11, 0.10);
+  --color-ink-border-strong: rgba(10, 10, 11, 0.18);
+
+  /* Accent aliases — accent = brand-teal, accent-dark = WCAG-AA-tauglich auf cream */
+  --color-accent: var(--color-brand-teal);
+  --color-accent-bright: var(--color-brand-teal-bright);
+  --color-accent-soft: rgba(0, 172, 167, 0.12);
+  --color-accent-dark: #007a76;
+
   /* Fluid type scale */
   --text-display: clamp(3.5rem, 8vw + 1rem, 9rem);
   --text-h1: clamp(2.5rem, 5vw + 1rem, 5.5rem);
@@ -55,5 +71,8 @@
   --radius-sm: 4px;
   --radius-md: 12px;
   --radius-lg: 24px;
+  --radius-card: 32px;
+  --radius-frame: 40px;
   --radius-full: 9999px;
+  --radius-pill: 9999px;
 }

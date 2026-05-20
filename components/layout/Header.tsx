@@ -38,7 +38,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <MagneticButton
             href={NAV_CTA.href}
-            variant="primary"
+            variant="pill-solid"
             className="hidden sm:inline-flex"
           >
             {NAV_CTA.label}

@@ -23,7 +23,7 @@ export default function KontaktPage() {
       <section className="pb-32">
         <div className="container-grid grid gap-16 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h2 className="text-h3 mb-8 font-display font-bold">
+            <h2 className="text-h3 mb-8 font-display font-black uppercase leading-tight tracking-tight">
               Schreib uns eine Nachricht
             </h2>
             <KontaktForm />
@@ -45,14 +45,14 @@ export default function KontaktPage() {
                 <a
                   key="t"
                   href={`tel:${CONTACT.studio.phone.replace(/\s/g, "")}`}
-                  className="hover:text-brand"
+                  className="hover:text-accent"
                 >
                   {CONTACT.studio.phoneDisplay}
                 </a>,
                 <a
                   key="m"
                   href={`mailto:${CONTACT.studio.email}`}
-                  className="hover:text-brand"
+                  className="hover:text-accent"
                 >
                   {CONTACT.studio.email}
                 </a>,
@@ -65,7 +65,7 @@ export default function KontaktPage() {
                 <a
                   key="t"
                   href={`tel:${CONTACT.physio.phone.replace(/\s/g, "")}`}
-                  className="hover:text-brand"
+                  className="hover:text-accent"
                 >
                   Tel. {CONTACT.physio.phoneDisplay}
                 </a>,
@@ -74,7 +74,7 @@ export default function KontaktPage() {
                   href={`https://wa.me/${CONTACT.physio.whatsapp.replace(/[^0-9]/g, "")}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-brand"
+                  className="hover:text-accent"
                 >
                   WhatsApp {CONTACT.physio.whatsappDisplay}
                 </a>,
@@ -103,7 +103,7 @@ function Block({
 }) {
   return (
     <div>
-      <div className="mb-3 flex items-center gap-2 text-brand">{icon}</div>
+      <div className="mb-3 flex items-center gap-2 text-accent">{icon}</div>
       <p className="eyebrow mb-2">{title}</p>
       <ul className="space-y-1 text-fg-muted">
         {lines.map((l, i) => (

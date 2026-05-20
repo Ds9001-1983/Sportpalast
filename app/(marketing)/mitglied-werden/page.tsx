@@ -50,7 +50,7 @@ export default async function MitgliedWerdenPage({
       {preselected && (
         <section className="-mt-10 pb-10">
           <div className="container-grid">
-            <div className="rounded-3xl border border-brand/40 bg-brand/5 p-8">
+            <div className="rounded-frame border border-accent/40 bg-accent-soft p-8">
               <p className="eyebrow mb-2">Dein gewählter Tarif</p>
               <div className="flex flex-wrap items-baseline justify-between gap-6">
                 <div>
@@ -76,8 +76,8 @@ export default async function MitgliedWerdenPage({
           <ol className="grid gap-6 md:grid-cols-3">
             {steps.map((s, i) => (
               <RevealOnScroll key={s.n} delay={i * 0.06}>
-                <li className="flex h-full flex-col justify-between rounded-3xl border border-border bg-bg-elevated/40 p-8">
-                  <p className="font-display text-7xl font-black text-brand/40">
+                <li className="flex h-full flex-col justify-between rounded-frame border border-border bg-bg-elevated p-8">
+                  <p className="font-display text-7xl font-black text-accent/40">
                     {s.n}
                   </p>
                   <div className="mt-8">
@@ -107,7 +107,7 @@ export default async function MitgliedWerdenPage({
                 brauchst — Beratung, Plan, Material.
               </p>
             </div>
-            <ul className="grid gap-3 self-start rounded-3xl border border-border bg-bg-elevated/40 p-8">
+            <ul className="grid gap-3 self-start rounded-frame border border-border bg-bg-elevated p-8">
               {[
                 "Mitgliedsausweis & Transponder-Chip",
                 "Trinkflasche",
@@ -149,7 +149,7 @@ export default async function MitgliedWerdenPage({
 
       <section id="probetraining" className="py-20">
         <div className="container-grid">
-          <div className="grid gap-10 rounded-3xl border border-border bg-bg-elevated/50 p-10 md:grid-cols-2 md:p-14">
+          <div className="grid gap-10 rounded-frame border border-border bg-bg-elevated p-10 md:grid-cols-2 md:p-14">
             <div>
               <p className="eyebrow mb-3">Lieber erst testen?</p>
               <h2 className="text-h2 font-display font-bold">

@@ -1,7 +1,10 @@
-import { PageHero } from "./PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
-import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ArrowRight } from "lucide-react";
+import { Asterisk } from "@/components/ui/Asterisk";
+import { BentoCard } from "@/components/ui/BentoCard";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { Pill } from "@/components/ui/Pill";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { PageHero } from "./PageHero";
 
 interface Props {
   eyebrow: string;
@@ -22,36 +25,43 @@ export function TopicPageTemplate({
 }: Props) {
   return (
     <>
-      <PageHero eyebrow={eyebrow} title={title} intro={intro} />
+      <PageHero eyebrow={eyebrow} title={title} intro={intro} variant="light" />
 
       {highlights && highlights.length > 0 && (
-        <section className="py-20">
-          <div className="container-grid grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-            {highlights.map((h, i) => (
-              <RevealOnScroll key={h.title} delay={i * 0.05}>
-                <div className="border-t border-border pt-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="text-h4 mt-3 font-display">{h.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-                    {h.body}
-                  </p>
-                </div>
-              </RevealOnScroll>
-            ))}
+        <section className="bg-bg pb-20 pt-8">
+          <div className="container-grid">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {highlights.map((h, i) => (
+                <RevealOnScroll key={h.title} delay={i * 0.05}>
+                  <BentoCard variant="dark" className="h-full">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-4 text-h4 font-display font-black uppercase leading-tight tracking-tight">
+                      {h.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-fg-muted">
+                      {h.body}
+                    </p>
+                  </BentoCard>
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
         </section>
       )}
 
       {body && body.length > 0 && (
-        <section className="py-12">
+        <section className="pb-16">
           <div className="container-grid">
             <RevealOnScroll>
-              <div className="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-fg-muted">
-                {body.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
+              <div className="mx-auto max-w-3xl rounded-[var(--radius-frame)] border border-ink-border bg-cream px-7 py-12 lg:px-14 lg:py-16">
+                <Pill variant="light">Hintergrund</Pill>
+                <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-muted">
+                  {body.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
               </div>
             </RevealOnScroll>
           </div>
@@ -59,19 +69,26 @@ export function TopicPageTemplate({
       )}
 
       {cta && (
-        <section className="py-24">
+        <section className="pb-24">
           <div className="container-grid">
             <RevealOnScroll>
-              <div className="flex flex-col items-start gap-6 rounded-3xl border border-border bg-bg-elevated/50 p-10 md:flex-row md:items-center md:justify-between md:p-14">
-                <div>
-                  <p className="eyebrow mb-2">Bereit?</p>
-                  <p className="text-h3 font-display max-w-xl">
-                    Komm vorbei, schau dich um — und finde heraus, ob es passt.
-                  </p>
+              <div className="relative overflow-hidden rounded-[var(--radius-frame)] border border-border bg-bg-elevated p-10 md:p-14">
+                <div className="relative z-10 flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+                  <div className="max-w-xl">
+                    <p className="eyebrow mb-3">Bereit?</p>
+                    <p className="text-h3 font-display font-black uppercase leading-[0.95] tracking-tight">
+                      Komm vorbei, schau dich um — und finde heraus, ob es passt.
+                    </p>
+                  </div>
+                  <MagneticButton href={cta.href} variant="pill-solid">
+                    {cta.label} <ArrowRight size={16} />
+                  </MagneticButton>
                 </div>
-                <MagneticButton href={cta.href} variant="primary">
-                  {cta.label} <ArrowRight size={16} />
-                </MagneticButton>
+                <Asterisk
+                  size={180}
+                  spinning
+                  className="pointer-events-none absolute -right-10 -top-10 opacity-30"
+                />
               </div>
             </RevealOnScroll>
           </div>

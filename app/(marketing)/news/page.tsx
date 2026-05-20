@@ -71,7 +71,7 @@ export default function NewsPage() {
                 <li>
                   <Link
                     href={`/news/${n.slug}`}
-                    className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-bg-elevated/40 p-6 transition-colors hover:border-brand"
+                    className="group flex h-full flex-col justify-between rounded-card border border-border bg-bg-elevated p-6 transition-colors hover:border-accent"
                   >
                     <div>
                       <p className="font-mono text-xs uppercase tracking-[0.18em] text-fg-subtle">
@@ -84,7 +84,7 @@ export default function NewsPage() {
                         {n.excerpt}
                       </p>
                     </div>
-                    <span className="mt-6 inline-flex items-center gap-1 text-xs uppercase tracking-[0.2em] text-fg-muted transition-colors group-hover:text-brand">
+                    <span className="mt-6 inline-flex items-center gap-1 text-xs uppercase tracking-[0.2em] text-fg-muted transition-colors group-hover:text-accent">
                       Lesen <ArrowUpRight size={12} />
                     </span>
                   </Link>

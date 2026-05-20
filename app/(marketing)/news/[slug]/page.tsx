@@ -121,7 +121,7 @@ export default async function NewsArticle({
       <div className="container-grid max-w-3xl">
         <Link
           href="/news"
-          className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-brand"
+          className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent"
         >
           <ArrowLeft size={14} /> Zurück zu News
         </Link>

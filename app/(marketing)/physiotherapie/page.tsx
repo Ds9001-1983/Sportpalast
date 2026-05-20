@@ -86,12 +86,12 @@ export default function PhysioPage() {
 
       <section className="py-12">
         <div className="container-grid">
-          <div className="rounded-3xl border border-brand/40 bg-brand/5 p-8 lg:p-10">
+          <div className="rounded-frame border border-accent/40 bg-accent-soft p-8 lg:p-10">
             <p className="eyebrow mb-3">Terminvereinbarung</p>
             <div className="flex flex-wrap items-center gap-6">
               <a
                 href={`tel:${CONTACT.physio.phone.replace(/\s/g, "")}`}
-                className="inline-flex items-center gap-3 text-h4 font-display font-semibold hover:text-brand"
+                className="inline-flex items-center gap-3 text-h4 font-display font-semibold hover:text-accent"
               >
                 <Phone size={18} />
                 {CONTACT.physio.phoneDisplay}
@@ -100,7 +100,7 @@ export default function PhysioPage() {
                 href={`https://wa.me/${CONTACT.physio.whatsapp.replace(/[^0-9]/g, "")}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 text-h4 font-display font-semibold hover:text-brand"
+                className="inline-flex items-center gap-3 text-h4 font-display font-semibold hover:text-accent"
               >
                 <MessageCircle size={18} />
                 WhatsApp {CONTACT.physio.whatsappDisplay}
@@ -135,8 +135,8 @@ export default function PhysioPage() {
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {ablauf.map((s, i) => (
               <RevealOnScroll key={s.n} delay={i * 0.05}>
-                <li className="flex h-full flex-col justify-between rounded-2xl border border-border bg-bg-elevated/40 p-6">
-                  <p className="font-display text-5xl font-black text-brand/40">
+                <li className="flex h-full flex-col justify-between rounded-card border border-border bg-bg-elevated p-6">
+                  <p className="font-display text-5xl font-black text-accent/40">
                     {s.n}
                   </p>
                   <div className="mt-6">
@@ -166,7 +166,7 @@ export default function PhysioPage() {
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {services.map((s, i) => (
                   <RevealOnScroll key={s.slug} delay={i * 0.04}>
-                    <article className="h-full rounded-2xl border border-border bg-bg-elevated/40 p-6 transition-colors hover:border-brand">
+                    <article className="h-full rounded-card border border-border bg-bg-elevated p-6 transition-colors hover:border-accent">
                       <h3 className="text-h4 font-display font-bold">
                         {s.name}
                       </h3>
@@ -183,7 +183,7 @@ export default function PhysioPage() {
       </section>
 
       <section className="py-20">
-        <div className="container-grid grid gap-10 rounded-3xl border border-border bg-bg-elevated/40 p-10 md:grid-cols-2 lg:p-14">
+        <div className="container-grid grid gap-10 rounded-frame border border-border bg-bg-elevated p-10 md:grid-cols-2 lg:p-14">
           <div>
             <p className="eyebrow mb-3">Kassenleistung</p>
             <h2 className="text-h3 max-w-[20ch] font-display font-bold">
@@ -208,14 +208,14 @@ export default function PhysioPage() {
       <section className="py-24">
         <div className="container-grid">
           <RevealOnScroll>
-            <div className="flex flex-col items-start gap-6 rounded-3xl border border-border bg-bg-elevated/50 p-10 md:flex-row md:items-center md:justify-between md:p-14">
+            <div className="flex flex-col items-start gap-6 rounded-frame border border-border bg-bg-elevated p-10 md:flex-row md:items-center md:justify-between md:p-14">
               <div>
                 <p className="eyebrow mb-2">Direkt buchen</p>
                 <p className="text-h3 max-w-xl font-display">
                   Ruf an, schreib uns auf WhatsApp — wir finden einen Termin.
                 </p>
               </div>
-              <MagneticButton href="/kontakt">
+              <MagneticButton href="/kontakt" variant="pill-solid">
                 Kontakt aufnehmen <ArrowRight size={16} />
               </MagneticButton>
             </div>

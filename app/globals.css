@@ -12,6 +12,22 @@
   --color-brand: var(--color-brand-teal);
   --color-brand-bright: var(--color-brand-teal-bright);
   --color-brand-soft: var(--color-brand-teal-soft);
+  --color-accent: var(--color-accent);
+  --color-accent-bright: var(--color-accent-bright);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-cream: var(--color-cream);
+  --color-cream-bg: var(--color-cream-bg);
+  --color-cream-elevated: var(--color-cream-elevated);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-subtle: var(--color-ink-subtle);
+  --color-ink-border: var(--color-ink-border);
+  --color-ink-border-strong: var(--color-ink-border-strong);
+
+  --radius-card: var(--radius-card);
+  --radius-frame: var(--radius-frame);
+  --radius-pill: var(--radius-pill);
 
   --font-display: var(--font-display), "Nunito Sans", system-ui, sans-serif;
   --font-sans: var(--font-sans), "Montserrat", system-ui, sans-serif;
