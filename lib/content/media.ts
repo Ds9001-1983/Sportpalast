@@ -47,12 +47,6 @@ export const IMG = {
     w: 1920,
     h: 1280,
   },
-  app_lounge: {
-    src: `${CDN}/IMG_7725.jpg`,
-    alt: "Lounge & Café im Sportpalast",
-    w: 2048,
-    h: 854,
-  },
   courses: {
     src: `${CDN}/bodycross-kurs.jpg`,
     alt: "Fitnesskurs im Sportpalast",
