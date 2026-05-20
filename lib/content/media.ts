@@ -1,85 +1,85 @@
-// Image-URL-Mapping zu den existierenden Studio-Fotos auf der Live-Seite.
-// Wird via next.config.mjs `remotePatterns` per `next/image` geladen.
-// Sobald HiRes-Pack vorliegt, hier zentral austauschen.
+// Lokale Platzhalter-Bilder (KI-generiert via RunPod z-image-turbo).
+// Liegen unter public/images/gen/. Sobald echte Studio-Fotos vorliegen,
+// hier zentral die Pfade austauschen — die Slugs/Keys bleiben gleich.
 
-const CDN = "https://www.sportpalast-lindlar.de/wp-content/uploads";
+const GEN = "/images/gen";
 
 export const IMG = {
   hero: {
-    src: `${CDN}/1-6.webp`,
+    src: `${GEN}/hero.jpg`,
     alt: "Sportpalast Lindlar — Glaspalast mit Panoramablick",
-    w: 1920,
-    h: 1080,
+    w: 1344,
+    h: 768,
   },
   fitness: {
-    src: `${CDN}/770_Hintergrund_1.jpg`,
+    src: `${GEN}/fitness.jpg`,
     alt: "Trainingsfläche im Sportpalast Lindlar",
-    w: 1920,
-    h: 1102,
+    w: 768,
+    h: 1344,
   },
   egym: {
-    src: `${CDN}/IMG_7731.jpg`,
+    src: `${GEN}/egym.jpg`,
     alt: "EGYM Smart Strength Geräte",
-    w: 2048,
-    h: 1536,
+    w: 768,
+    h: 1344,
   },
   sauna: {
-    src: `${CDN}/SWK_Sauna-Wellness-Kontor_Privat-Saunabau-Ocean-Spa-2.jpg`,
+    src: `${GEN}/sauna.jpg`,
     alt: "Sauna & Wellness im Sportpalast",
-    w: 2048,
-    h: 1536,
+    w: 1344,
+    h: 768,
   },
   rehasport: {
-    src: `${CDN}/Rehasport.webp`,
+    src: `${GEN}/rehasport.jpg`,
     alt: "Rehasport im Sportpalast Lindlar",
-    w: 1920,
-    h: 1280,
+    w: 1344,
+    h: 768,
   },
   physio: {
-    src: `${CDN}/physiotherapie-krankengymnastik.jpeg`,
+    src: `${GEN}/physio.jpg`,
     alt: "Physiotherapie im Sportpalast Lindlar",
-    w: 1920,
-    h: 1280,
+    w: 1344,
+    h: 768,
   },
   studio_outside: {
-    src: `${CDN}/Lindlar-125-2024-11-13T08_04_25.600.jpg`,
+    src: `${GEN}/studio_outside.jpg`,
     alt: "Sportpalast Lindlar von außen",
-    w: 1920,
-    h: 1280,
+    w: 1344,
+    h: 768,
   },
   courses: {
-    src: `${CDN}/bodycross-kurs.jpg`,
+    src: `${GEN}/courses.jpg`,
     alt: "Fitnesskurs im Sportpalast",
-    w: 1920,
-    h: 1280,
+    w: 1344,
+    h: 768,
   },
 } as const;
 
 export const GALLERY: { src: string; alt: string }[] = [
-  { src: `${CDN}/1-6.webp`, alt: "Glaspalast – Außenansicht" },
-  { src: `${CDN}/770_Hintergrund_1.jpg`, alt: "Trainingsfläche" },
-  { src: `${CDN}/IMG_7745.jpg`, alt: "Krafttraining" },
-  { src: `${CDN}/IMG_7731.jpg`, alt: "EGYM Geräte" },
-  { src: `${CDN}/IMG_7736.jpg`, alt: "Cardio-Bereich" },
-  { src: `${CDN}/IMG_7725.jpg`, alt: "Lounge & Café" },
-  { src: `${CDN}/SWK_Sauna-Wellness-Kontor_Privat-Saunabau-Ocean-Spa-2.jpg`, alt: "Sauna Indoor" },
-  { src: `${CDN}/IMG_7771.jpg`, alt: "Studio-Atmosphäre" },
-  { src: `${CDN}/IMG_7751.jpg`, alt: "Kursraum" },
-  { src: `${CDN}/IMG_7760.jpg`, alt: "Wellness-Bereich" },
+  { src: `${GEN}/g01.jpg`, alt: "Glaspalast – Außenansicht" },
+  { src: `${GEN}/g02.jpg`, alt: "Trainingsfläche" },
+  { src: `${GEN}/g03.jpg`, alt: "Krafttraining" },
+  { src: `${GEN}/g04.jpg`, alt: "EGYM Geräte" },
+  { src: `${GEN}/g05.jpg`, alt: "Cardio-Bereich" },
+  { src: `${GEN}/g06.jpg`, alt: "Lounge & Café" },
+  { src: `${GEN}/g07.jpg`, alt: "Sauna Indoor" },
+  { src: `${GEN}/g08.jpg`, alt: "Studio-Atmosphäre" },
+  { src: `${GEN}/g09.jpg`, alt: "Kursraum" },
+  { src: `${GEN}/g10.jpg`, alt: "Wellness-Bereich" },
 ];
 
-// Team-Portraits — Slug aus lib/content/team.ts → Live-Bild-URL
+// Team-Portraits — Slug aus lib/content/team.ts → lokales Platzhalter-Portrait
 export const TEAM_PHOTOS: Record<string, string> = {
-  "uygar-oezcelik": `${CDN}/uygar-oezcelik04.jpg`,
-  "vera-duetting": `${CDN}/vera-duetting03.jpg`,
-  "evelyn-schuette": `${CDN}/Evelyn-Schuett-neu.jpg`,
-  "viviane-gerhardt": `${CDN}/Viviane-Neu.jpg`,
-  "saskia-klemke": `${CDN}/Saskia-Physio-Lindlar.jpg`,
-  "agnieszka-reese": `${CDN}/aggi-reese.jpg`,
-  "fabian-schuerfeld": `${CDN}/fabian-schuerfeld.jpeg`,
-  "michaela-cordella": `${CDN}/michaela-cordella-.jpg`,
-  "thomas-buergerhausen": `${CDN}/thomas-buergerhausen.jpeg`,
-  "marie-bork": `${CDN}/marie02.jpg`,
-  "jil-kamml": `${CDN}/Jill.jpg`,
-  "wolfgang-feykens": `${CDN}/Henry-2-.jpg`,
+  "uygar-oezcelik": `${GEN}/team/uygar-oezcelik.jpg`,
+  "vera-duetting": `${GEN}/team/vera-duetting.jpg`,
+  "evelyn-schuette": `${GEN}/team/evelyn-schuette.jpg`,
+  "viviane-gerhardt": `${GEN}/team/viviane-gerhardt.jpg`,
+  "saskia-klemke": `${GEN}/team/saskia-klemke.jpg`,
+  "agnieszka-reese": `${GEN}/team/agnieszka-reese.jpg`,
+  "fabian-schuerfeld": `${GEN}/team/fabian-schuerfeld.jpg`,
+  "michaela-cordella": `${GEN}/team/michaela-cordella.jpg`,
+  "thomas-buergerhausen": `${GEN}/team/thomas-buergerhausen.jpg`,
+  "marie-bork": `${GEN}/team/marie-bork.jpg`,
+  "jil-kamml": `${GEN}/team/jil-kamml.jpg`,
+  "wolfgang-feykens": `${GEN}/team/wolfgang-feykens.jpg`,
 };
