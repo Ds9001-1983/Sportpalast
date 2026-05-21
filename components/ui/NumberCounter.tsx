@@ -23,8 +23,10 @@ export function NumberCounter({
       setV(to);
       return;
     }
-    const obs = new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) return;
+    let done = false;
+    const run = () => {
+      if (done) return;
+      done = true;
       const start = performance.now();
       const ease = (t: number) => 1 - Math.pow(1 - t, 3);
       const step = (now: number) => {
@@ -33,10 +35,22 @@ export function NumberCounter({
         if (t < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
+    };
+
+    const obs = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      run();
       obs.disconnect();
     });
     obs.observe(el);
-    return () => obs.disconnect();
+
+    // Fail-safe: falls der Observer nie feuert, nach 1,2 s garantiert hochzählen
+    const fallback = window.setTimeout(run, 1200);
+
+    return () => {
+      obs.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [to, duration]);
 
   return (

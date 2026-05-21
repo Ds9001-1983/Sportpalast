@@ -107,9 +107,10 @@ export function ServicesGrid() {
                   alt={it.image.alt}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-25"
+                  className="object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-bg via-bg/85 to-bg/50 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Dunkler Scrim auf Hover, damit der weiße Text auf dem Foto lesbar bleibt */}
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-black/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <Link href={it.href} className="absolute inset-0" aria-label={it.title} />
                 <it.icon
                   size={32}
@@ -117,10 +118,10 @@ export function ServicesGrid() {
                   strokeWidth={1.4}
                 />
                 <div className="relative">
-                  <h3 className="text-h3 font-display font-black uppercase leading-tight tracking-tight">
+                  <h3 className="text-h3 font-display font-black uppercase leading-tight tracking-tight transition-colors duration-300 group-hover:text-white">
                     {it.title}
                   </h3>
-                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-fg-muted">
+                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-fg-muted transition-colors duration-300 group-hover:text-white/80">
                     {it.body}
                   </p>
                   <span
@@ -128,7 +129,7 @@ export function ServicesGrid() {
                       "mt-6 inline-flex size-10 items-center justify-center rounded-full transition-colors " +
                       (it.highlighted
                         ? "bg-[var(--color-accent)] text-white"
-                        : "border border-border-strong text-fg group-hover:border-[var(--color-accent)] group-hover:text-[var(--color-accent)]")
+                        : "border border-border-strong text-fg group-hover:border-white group-hover:text-white")
                     }
                   >
                     <ArrowUpRight size={18} strokeWidth={1.6} />

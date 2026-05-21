@@ -50,12 +50,14 @@ export function TrainerBento() {
           </Link>
         </div>
 
-        {/* Bento-Grid: unregelmäßige Größen */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-[repeat(8,minmax(40px,1fr))]">
+        {/* Bento-Grid: unregelmäßige Größen.
+            Wichtig: col-/row-span MUSS auf dem direkten Grid-Kind sitzen
+            (hier RevealOnScroll), nicht auf dem inneren <article>. */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:h-[640px] lg:grid-cols-12 lg:grid-rows-[repeat(8,minmax(0,1fr))]">
           {members.map((m, i) => {
             const photo = TEAM_PHOTOS[m.slug];
             const highlighted = m.slug === HIGHLIGHT_SLUG;
-            // Bento-Span-Pattern
+            // Bento-Span-Pattern (auf das Grid-Item = RevealOnScroll angewendet)
             const span = [
               "lg:col-span-5 lg:row-span-5", // 0 — groß
               "lg:col-span-7 lg:row-span-3", // 1 — breit
@@ -63,14 +65,17 @@ export function TrainerBento() {
               "lg:col-span-5 lg:row-span-3", // 3 — breit
             ][i];
             return (
-              <RevealOnScroll key={m.slug} delay={i * 0.05}>
+              <RevealOnScroll
+                key={m.slug}
+                delay={i * 0.05}
+                className={cn("w-full lg:h-full", span)}
+              >
                 <article
                   className={cn(
                     "group relative aspect-[4/5] w-full overflow-hidden rounded-card border lg:aspect-auto lg:h-full",
                     highlighted
                       ? "border-2 border-[var(--color-accent)]"
                       : "border-ink-border bg-cream-elevated",
-                    span,
                   )}
                 >
                   {photo && (

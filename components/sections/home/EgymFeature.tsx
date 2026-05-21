@@ -46,7 +46,7 @@ export function EgymFeature() {
               key={t.label}
               className={
                 "relative -mb-px pb-3 text-sm lg:text-base " +
-                (t.active ? "text-[var(--color-accent)]" : "text-fg-subtle")
+                (t.active ? "text-[var(--color-accent)]" : "text-fg-muted")
               }
             >
               {t.label}

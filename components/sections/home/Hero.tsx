@@ -31,7 +31,7 @@ export function Hero() {
           <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
             <SplitHeading
               as="h1"
-              className="max-w-[14ch] font-display text-[clamp(2.75rem,9vw,8rem)] font-black uppercase leading-[0.88] tracking-[-0.04em]"
+              className="max-w-[14ch] font-display text-[clamp(2.75rem,9vw,8rem)] font-black uppercase leading-[0.93] tracking-[-0.04em]"
             >
               Training mit Aussicht — für deine beste Form.
             </SplitHeading>

@@ -8,8 +8,8 @@ type Props = {
 
 export function VerticalSideTab({ label, className, variant = "dark" }: Props) {
   const surface = variant === "dark"
-    ? "bg-bg-elevated text-fg-subtle border-border"
-    : "bg-cream-elevated text-ink-subtle border-ink-border";
+    ? "bg-bg-elevated text-fg-muted border-border"
+    : "bg-cream-elevated text-ink-muted border-ink-border";
   return (
     <div
       className={cn(
