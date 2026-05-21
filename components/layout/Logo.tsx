@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 
-// Original brand logo SVG lives in /public/brand/logo-white.svg.
-// Embedded via plain <img> (Next/Image is unnecessary for static SVG and
-// blocks CSS color overrides).
+// Ink-Logo-Variante (/public/brand/logo-ink.svg) für die helle Palette —
+// Schrift in Warm-Black (#1F1A14), Monogramm in Terracotta. Die weiße
+// Original-Variante (logo-white.svg) bleibt für dunkle Flächen erhalten.
+// Embedded via plain <img> (Next/Image ist für statische SVGs unnötig).
 export function Logo({
   className,
   href = "/",
@@ -23,7 +24,7 @@ export function Logo({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/brand/logo-white.svg"
+        src="/brand/logo-ink.svg"
         alt="Sportpalast"
         className={cn("w-auto", height)}
       />

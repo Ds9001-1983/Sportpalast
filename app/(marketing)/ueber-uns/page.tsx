@@ -204,7 +204,7 @@ export default function UeberUnsPage() {
                     ) : (
                       <div
                         aria-hidden
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,172,167,0.35),transparent_60%)]"
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(194,97,63,0.35),transparent_60%)]"
                       />
                     )}
                     <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/40 to-transparent" />

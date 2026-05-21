@@ -5,6 +5,8 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Faq } from "@/components/sections/mitglied-werden/Faq";
 import { PRICES, STARTER_PACKAGE } from "@/lib/content/prices";
+import { MEMBERSHIP_FAQ } from "@/lib/content/faq";
+import { FaqJsonLd } from "@/lib/schema";
 import { eur } from "@/lib/utils/format";
 
 export const metadata: Metadata = {
@@ -41,6 +43,7 @@ export default async function MitgliedWerdenPage({
 
   return (
     <>
+      <FaqJsonLd items={MEMBERSHIP_FAQ} />
       <PageHero
         eyebrow="Mitglied werden"
         title="In drei Schritten dabei."

@@ -4,6 +4,7 @@ import { LenisProvider } from "@/components/animations/LenisProvider";
 import { SoundProvider } from "@/components/providers/SoundProvider";
 import { SoundToggle } from "@/components/layout/SoundToggle";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { LocalBusinessJsonLd } from "@/lib/schema";
 import "./globals.css";
 
 const display = Nunito_Sans({
@@ -28,7 +29,7 @@ const mono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
+  themeColor: "#f8f4ee",
   width: "device-width",
   initialScale: 1,
 };
@@ -72,6 +73,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-bg text-fg antialiased">
+        <LocalBusinessJsonLd />
         <SoundProvider>
           <LenisProvider>
             <ScrollProgress />

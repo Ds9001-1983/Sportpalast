@@ -27,7 +27,7 @@ export function BentoCard({
       className={cn(
         "relative overflow-hidden rounded-[var(--radius-card)] border p-8 lg:p-10 transition-colors duration-300",
         styles,
-        highlighted && "border-2 border-[var(--color-accent)] shadow-[0_0_0_4px_rgba(0,172,167,0.10)]",
+        highlighted && "border-2 border-[var(--color-accent)] shadow-[0_0_0_4px_rgba(194,97,63,0.10)]",
         className,
       )}
     >

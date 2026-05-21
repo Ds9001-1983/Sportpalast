@@ -83,7 +83,7 @@ function Panel({ group, visible }: { group: NavGroup; visible: boolean }) {
             <li key={c.href}>
               <Link
                 href={c.href}
-                className="group flex items-center justify-between rounded-lg px-2 py-1.5 text-sm text-fg-muted transition-colors hover:bg-white/5 hover:text-fg"
+                className="group flex items-center justify-between rounded-lg px-2 py-1.5 text-sm text-fg-muted transition-colors hover:bg-ink/5 hover:text-fg"
               >
                 <span>{c.label}</span>
                 <ChevronRight

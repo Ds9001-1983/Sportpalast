@@ -16,9 +16,9 @@ export default function OG() {
           justifyContent: "space-between",
           padding: 80,
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(0,172,167,0.35), transparent 60%)",
-          backgroundColor: "#0a0a0b",
-          color: "#f5f5f4",
+            "linear-gradient(135deg, #F8F4EE 0%, #EFE7DA 100%)",
+          backgroundColor: "#F8F4EE",
+          color: "#1F1A14",
           fontFamily: "system-ui",
         }}
       >
@@ -29,7 +29,7 @@ export default function OG() {
             fontSize: 22,
             letterSpacing: 6,
             textTransform: "uppercase",
-            color: "#00ACA7",
+            color: "#C2613F",
           }}
         >
           <div
@@ -37,7 +37,7 @@ export default function OG() {
               width: 10,
               height: 10,
               borderRadius: 999,
-              background: "#00ACA7",
+              background: "#C2613F",
               marginRight: 16,
             }}
           />
@@ -65,7 +65,7 @@ export default function OG() {
           <div
             style={{
               fontSize: 28,
-              color: "rgba(245,245,244,0.65)",
+              color: "#5C544A",
               maxWidth: 800,
             }}
           >
@@ -81,7 +81,7 @@ export default function OG() {
             fontSize: 18,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "rgba(245,245,244,0.45)",
+            color: "rgba(31,26,20,0.5)",
           }}
         >
           <div>Training mit Aussicht</div>
