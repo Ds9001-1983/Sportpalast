@@ -162,6 +162,12 @@ export default async function MitgliedWerdenPage({
                 Wir nehmen uns Zeit, zeigen dir alles, klären deine Fragen.
                 Danach entscheidest du in Ruhe.
               </p>
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-bg px-4 py-2 text-sm text-fg-muted">
+                <span className="font-display font-black text-accent-dark">
+                  10 €
+                </span>
+                Probetraining — wird bei Abschluss verrechnet.
+              </p>
             </div>
             <div className="flex flex-col items-start justify-center gap-4">
               <MagneticButton href="/kontakt">

@@ -14,6 +14,11 @@ export const CONTACT = {
     whatsapp: "+49 155 63183509",
     whatsappDisplay: "+49 (0) 155 — 631 835 09",
   },
+  sister: {
+    name: "Sportpalast Meinerzhagen",
+    phone: "+49 2354 12774",
+    phoneDisplay: "+49 (0) 2354 — 12 774",
+  },
   social: {
     instagram: "https://www.instagram.com/sportpalast.lindlar",
     facebook: "https://www.facebook.com/FitAndFunSportpalast",

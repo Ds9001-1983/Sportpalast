@@ -73,10 +73,22 @@
   --dur-base: 400ms;
   --dur-slow: 800ms;
 
+  /* Shadows — warm getönt (auf Basis #1f1a14), subtil bis dramatisch */
+  --shadow-sm: 0 1px 2px rgba(31, 26, 20, 0.06);
+  --shadow-md: 0 4px 12px rgba(31, 26, 20, 0.08);
+  --shadow-lg: 0 14px 30px -8px rgba(31, 26, 20, 0.16);
+  --shadow-xl: 0 28px 60px -12px rgba(31, 26, 20, 0.22);
+  --shadow-accent-glow: 0 0 0 4px rgba(194, 97, 63, 0.12);
+
   /* Layout */
   --container-max: 1440px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --section-pad-y: clamp(4rem, 10vw, 9rem);
+
+  /* Section-Spacing (fluid) — ersetzt hartkodiertes py-24/py-32 */
+  --section-pad-sm: clamp(3rem, 6vw, 4.5rem);
+  --section-pad-md: clamp(4rem, 8vw, 6.5rem);
+  --section-pad-lg: clamp(6rem, 10vw, 9rem);
 
   /* Radii */
   --radius-sm: 4px;

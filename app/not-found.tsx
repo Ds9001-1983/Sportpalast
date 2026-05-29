@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <main className="flex min-h-screen items-center justify-center px-6">
       <div className="text-center">
-        <p className="font-mono text-sm uppercase tracking-[0.3em] text-brand">
+        <p className="font-mono text-sm uppercase tracking-[0.3em] text-accent-dark">
           404
         </p>
         <h1 className="text-display mt-4 font-display">Nicht gefunden.</h1>

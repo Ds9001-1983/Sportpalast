@@ -131,7 +131,7 @@ export function KursplanInteractive() {
                             ))}
                           </span>
                           {s.note && (
-                            <p className="mt-0.5 text-[0.7rem] text-brand">
+                            <p className="mt-0.5 text-[0.7rem] text-accent-dark">
                               {s.note}
                             </p>
                           )}
@@ -186,7 +186,7 @@ function FilterChip({
       className={cn(
         "rounded-full border px-4 py-1.5 text-xs uppercase tracking-[0.1em] transition-colors",
         active
-          ? "border-brand bg-brand/10 text-brand"
+          ? "border-brand bg-brand/10 text-accent-dark"
           : "border-border text-fg-muted hover:border-border-strong hover:text-fg",
       )}
     >

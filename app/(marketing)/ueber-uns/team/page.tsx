@@ -68,7 +68,7 @@ export default function TeamPage() {
                               className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(194,97,63,0.35),transparent_60%)]"
                             />
                           )}
-                          <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent" />
                           <figcaption className="absolute inset-x-0 bottom-0 p-5">
                             <p className="font-display text-xl font-black uppercase leading-tight tracking-tight text-white">
                               {m.name}
@@ -76,6 +76,11 @@ export default function TeamPage() {
                             <p className="mt-1 text-xs uppercase tracking-[0.15em] text-white/70">
                               {m.role}
                             </p>
+                            {m.bio && (
+                              <p className="mt-2 text-xs leading-snug text-white/65">
+                                {m.bio}
+                              </p>
+                            )}
                           </figcaption>
                         </figure>
                       </RevealOnScroll>

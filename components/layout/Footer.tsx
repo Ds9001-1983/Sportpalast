@@ -80,6 +80,18 @@ export function Footer() {
                   {CONTACT.studio.email}
                 </a>
               </li>
+              <li className="flex items-start gap-3 pt-1 text-fg-subtle">
+                <Phone size={16} className="mt-0.5 shrink-0 text-fg-subtle" />
+                <span>
+                  Schwesterstudio {CONTACT.sister.name} ·{" "}
+                  <a
+                    href={`tel:${CONTACT.sister.phone.replace(/\s/g, "")}`}
+                    className="hover:text-fg"
+                  >
+                    {CONTACT.sister.phoneDisplay}
+                  </a>
+                </span>
+              </li>
             </ul>
           </div>
           <div>
@@ -127,7 +139,7 @@ function SocialLink({
         target="_blank"
         rel="noreferrer noopener"
         aria-label={label}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-fg-muted transition-colors hover:border-brand hover:text-brand"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-fg-muted transition-all duration-200 hover:-translate-y-0.5 hover:scale-110 hover:border-brand hover:text-brand"
       >
         {children}
       </a>

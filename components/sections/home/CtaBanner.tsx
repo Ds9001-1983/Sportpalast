@@ -29,7 +29,7 @@ export function CtaBanner() {
               surface="dark"
               size="lg"
               ariaLabel="Mitglied werden"
-              className="size-24 border-dashed"
+              className="size-24 border-dashed hover:border-solid"
             />
           </Link>
         </div>

@@ -68,7 +68,7 @@ export function KontaktForm() {
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm text-brand underline-offset-4 hover:underline"
+          className="mt-6 text-sm text-accent-dark underline-offset-4 hover:underline"
         >
           Weitere Nachricht senden
         </button>

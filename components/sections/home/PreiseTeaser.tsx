@@ -40,8 +40,8 @@ export function PreiseTeaser() {
                       <Link
                         href={`/preise?plan=${p.slug}`}
                         className={cn(
-                          "grid items-center gap-6 px-6 py-8 transition-opacity lg:grid-cols-[1.6fr_auto_auto] lg:px-10 lg:py-10",
-                          active ? "opacity-100" : "opacity-55 hover:opacity-90",
+                          "grid items-center gap-6 rounded-2xl px-6 py-8 transition-all duration-300 hover:bg-white/5 lg:grid-cols-[1.6fr_auto_auto] lg:px-10 lg:py-10",
+                          active ? "opacity-100" : "opacity-55 hover:opacity-100",
                         )}
                       >
                         <div>

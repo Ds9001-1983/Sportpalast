@@ -2,6 +2,7 @@ import { ArrowRight, Smile } from "lucide-react";
 import { Asterisk } from "@/components/ui/Asterisk";
 import { ImageCardCaption } from "@/components/ui/ImageCardCaption";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { Parallax } from "@/components/ui/Parallax";
 import { Pill } from "@/components/ui/Pill";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { IMG } from "@/lib/content/media";
@@ -36,7 +37,9 @@ export function Hero() {
               Training mit Aussicht — für deine beste Form.
             </SplitHeading>
             <div className="flex shrink-0 items-start justify-end gap-4 lg:flex-col lg:items-end">
-              <Asterisk size={88} spinning />
+              <Parallax offset={90}>
+                <Asterisk size={88} spinning />
+              </Parallax>
             </div>
           </div>
 

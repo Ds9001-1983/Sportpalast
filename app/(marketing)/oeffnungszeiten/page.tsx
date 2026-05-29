@@ -86,7 +86,7 @@ function Row({
       <span className="font-display font-medium">{day}</span>
       <span className="text-right font-mono text-sm text-fg-muted">
         {open}
-        {note && <span className="ml-2 text-brand">· {note}</span>}
+        {note && <span className="ml-2 text-accent-dark">· {note}</span>}
       </span>
     </li>
   );

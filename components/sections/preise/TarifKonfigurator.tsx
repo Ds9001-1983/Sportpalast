@@ -73,7 +73,7 @@ export function TarifKonfigurator({
                       <div className="flex items-center gap-2">
                         <p className="font-display text-xl font-bold">{p.name}</p>
                         {p.badge && (
-                          <Pill className="border-brand/40 text-brand">
+                          <Pill className="border-brand/40 text-accent-dark">
                             {p.badge}
                           </Pill>
                         )}

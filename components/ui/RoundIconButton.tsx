@@ -43,8 +43,8 @@ export function RoundIconButton({
     variant === "solid"
       ? "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-bright)]"
       : surface === "dark"
-        ? "border border-border-strong text-fg hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-        : "border border-ink-border-strong text-ink hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]";
+        ? "border border-border-strong text-fg hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]"
+        : "border border-ink-border-strong text-ink hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]";
 
   return (
     <button

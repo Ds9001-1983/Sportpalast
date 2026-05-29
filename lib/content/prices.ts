@@ -26,7 +26,7 @@ export const PRICES: PricePlan[] = [
     variants: [
       { duration: 24, durationLabel: "24 Monate", monthly: 49.95 },
       { duration: 12, durationLabel: "12 Monate", monthly: 59.95 },
-      { duration: 0, durationLabel: "monatlich kündbar", monthly: 59.95 },
+      { duration: 0, durationLabel: "monatlich kündbar", monthly: 79.95 },
     ],
     highlights: [
       "Gerätetraining & Freihantelbereich",

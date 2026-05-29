@@ -139,7 +139,7 @@ export default function UeberUnsPage() {
             {values.map((v, i) => (
               <RevealOnScroll key={v.title} delay={i * 0.05}>
                 <div className="rounded-card border border-border bg-bg-elevated p-8">
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand">
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-dark">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="text-h4 mt-3 font-display font-bold">
@@ -167,7 +167,7 @@ export default function UeberUnsPage() {
                     aria-hidden
                     className="absolute -left-9.25 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand"
                   />
-                  <p className="font-mono text-sm uppercase tracking-[0.2em] text-brand">
+                  <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent-dark">
                     {t.year}
                   </p>
                   <h3 className="text-h4 mt-2 font-display font-bold">

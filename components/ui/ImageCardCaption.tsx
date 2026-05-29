@@ -45,7 +45,7 @@ export function ImageCardCaption({
         priority={priority}
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       <div className="absolute inset-x-5 bottom-5 flex flex-col gap-1">
         {eyebrow && (
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">

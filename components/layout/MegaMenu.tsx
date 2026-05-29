@@ -28,7 +28,7 @@ export function MegaMenu() {
                 className={cn(
                   "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   open === group.label
-                    ? "text-brand"
+                    ? "text-accent-dark"
                     : "text-fg-muted hover:text-fg",
                 )}
               >
@@ -72,7 +72,7 @@ function Panel({ group, visible }: { group: NavGroup; visible: boolean }) {
           {group.href && (
             <Link
               href={group.href}
-              className="inline-flex items-center gap-1 text-sm font-medium text-brand hover:gap-2 transition-all"
+              className="inline-flex items-center gap-1 text-sm font-medium text-accent-dark hover:gap-2 transition-all"
             >
               Übersicht <ChevronRight size={14} />
             </Link>
