@@ -28,12 +28,15 @@ export const CONTACT = {
 
 export const CONTACT_CATEGORIES = [
   "Allgemeine Anfrage",
+  "Probetraining",
   "Terminvereinbarung",
   "Rückrufbitte",
   "Beratung zur Mitgliedschaft",
   "Kursangebot",
   "Fitness",
   "Physiotherapie",
+  "Rehasport",
+  "Bewerbung",
   "Sonstiges",
 ] as const;
 

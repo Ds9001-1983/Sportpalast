@@ -5,7 +5,7 @@
  * Terracotta-Familie, damit die ~100 bestehenden Nutzungen einheitlich umziehen.
  * Hinweis: Die echte Logo-Farbe ist Teal (#00ACA7, siehe --color-legacy-teal) —
  * ein Wechsel zurück ist ein Einzeiler hier.
- * Fonts (Montserrat + Nunito Sans) bleiben als bestehende Marken-Schriften.
+ * Fonts: Fraunces (Display-Serif) + Inter (Body) + Caveat (Akzent) laut Referenz §3.2.
  */
 
 :root {

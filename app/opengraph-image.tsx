@@ -28,8 +28,7 @@ export default function OG() {
             alignItems: "center",
             fontSize: 22,
             letterSpacing: 6,
-            textTransform: "uppercase",
-            color: "#C2613F",
+                        color: "#C2613F",
           }}
         >
           <div
@@ -54,7 +53,7 @@ export default function OG() {
           <div
             style={{
               fontSize: 104,
-              fontWeight: 900,
+              fontWeight: 600,
               lineHeight: 1,
               letterSpacing: -3,
               maxWidth: 900,
@@ -80,8 +79,7 @@ export default function OG() {
             alignItems: "flex-end",
             fontSize: 18,
             letterSpacing: 4,
-            textTransform: "uppercase",
-            color: "rgba(31,26,20,0.5)",
+                        color: "rgba(31,26,20,0.5)",
           }}
         >
           <div>Training mit Aussicht</div>

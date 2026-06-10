@@ -19,7 +19,7 @@ export function VerticalSideTab({ label, className, variant = "dark" }: Props) {
       )}
     >
       <span
-        className="font-display text-h4 font-black uppercase tracking-tight"
+        className="font-display text-h4 font-medium tracking-tight"
         style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
       >
         {label}

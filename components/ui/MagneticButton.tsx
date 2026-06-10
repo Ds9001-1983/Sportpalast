@@ -9,6 +9,8 @@ type Variant = "primary" | "ghost" | "outline" | "pill-solid" | "pill-ink";
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   href?: string;
+  target?: string;
+  rel?: string;
   variant?: Variant;
   strength?: number;
   children: React.ReactNode;

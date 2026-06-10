@@ -30,7 +30,7 @@ export function MarqueeText({
   return (
     <div
       className={cn(
-        "group relative flex w-full overflow-hidden border-y border-border py-5 text-[clamp(1rem,1.5vw,1.5rem)] font-display font-semibold uppercase tracking-tight",
+        "group relative flex w-full overflow-hidden border-y border-border py-5 text-[clamp(1rem,1.5vw,1.5rem)] font-sans font-medium uppercase tracking-[0.08em]",
         className,
       )}
       aria-hidden

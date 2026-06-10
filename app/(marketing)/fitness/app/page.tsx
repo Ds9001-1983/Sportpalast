@@ -11,12 +11,6 @@ export const metadata: Metadata = {
 
 export default function AppPage() {
   return (
-    <TopicPageTemplate
-      eyebrow={data.eyebrow}
-      title={data.title}
-      intro={data.intro}
-      highlights={data.highlights}
-      cta={data.cta}
-    />
+    <TopicPageTemplate page={data} />
   );
 }

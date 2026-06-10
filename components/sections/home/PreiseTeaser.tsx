@@ -20,7 +20,7 @@ export function PreiseTeaser() {
             </p>
             <SplitHeading
               as="h2"
-              className="text-h1 mx-auto font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+              className="text-h1 mx-auto font-display font-medium leading-[1.05] tracking-[-0.01em]"
             >
               Besten Tarif.
             </SplitHeading>
@@ -38,7 +38,7 @@ export function PreiseTeaser() {
                   <RevealOnScroll key={p.slug} delay={i * 0.05}>
                     <li className="relative">
                       <Link
-                        href={`/preise?plan=${p.slug}`}
+                        href={`/mitgliedschaft?plan=${p.slug}`}
                         className={cn(
                           "grid items-center gap-6 rounded-2xl px-6 py-8 transition-all duration-300 hover:bg-white/5 lg:grid-cols-[1.6fr_auto_auto] lg:px-10 lg:py-10",
                           active ? "opacity-100" : "opacity-55 hover:opacity-100",
@@ -52,7 +52,7 @@ export function PreiseTeaser() {
                           )}
                           <h3
                             className={cn(
-                              "font-display font-black uppercase leading-[0.95] tracking-[-0.02em]",
+                              "font-display font-medium leading-[1.05] tracking-[-0.01em]",
                               active ? "text-[clamp(1.75rem,3.5vw,3rem)]" : "text-[clamp(1.5rem,3vw,2.5rem)] text-cream/70",
                             )}
                           >
@@ -90,7 +90,7 @@ export function PreiseTeaser() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <MagneticButton href="/preise" variant="pill-ink">
+            <MagneticButton href="/mitgliedschaft" variant="pill-ink">
               Tarif-Konfigurator öffnen <ArrowRight size={14} />
             </MagneticButton>
           </div>

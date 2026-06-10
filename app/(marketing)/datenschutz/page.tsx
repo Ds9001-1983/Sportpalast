@@ -114,7 +114,7 @@ function Block({
 }) {
   return (
     <section>
-      <h2 className="mb-3 font-display text-xl font-bold text-fg">{title}</h2>
+      <h2 className="mb-3 font-display text-xl font-medium text-fg">{title}</h2>
       <div className="space-y-2 leading-relaxed">{children}</div>
     </section>
   );

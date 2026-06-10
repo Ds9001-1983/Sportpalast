@@ -41,7 +41,7 @@ export function TestimonialsCarousel() {
             <p className="eyebrow mb-4">Stimmen</p>
             <SplitHeading
               as="h2"
-              className="text-h1 max-w-[14ch] font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+              className="text-h1 max-w-[14ch] font-display font-medium leading-[1.05] tracking-[-0.01em]"
             >
               Was unsere Mitglieder sagen.
             </SplitHeading>
@@ -77,11 +77,11 @@ export function TestimonialsCarousel() {
                     size={48}
                     className="absolute right-8 top-8"
                   />
-                  <blockquote className="text-h3 mt-6 max-w-3xl font-display font-black uppercase leading-[1.05] tracking-[-0.02em]">
+                  <blockquote className="text-h3 mt-6 max-w-3xl font-display font-medium leading-[1.15] tracking-[-0.01em]">
                     „{t.quote}"
                   </blockquote>
                   <figcaption className="mt-auto">
-                    <p className="font-display font-black uppercase tracking-tight">
+                    <p className="font-display font-medium tracking-tight">
                       {t.author}
                     </p>
                     {t.role && (

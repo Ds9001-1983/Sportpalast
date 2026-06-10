@@ -10,6 +10,7 @@ export interface PricePlan {
   variants: { duration: DurationKey; durationLabel: string; monthly: number }[];
   highlights: string[];
   requirements?: string[];
+  checkoutUrl?: string;
 }
 
 export const STARTER_PACKAGE = 79.95;
@@ -33,9 +34,13 @@ export const PRICES: PricePlan[] = [
       "EGYM Smart Strength inklusive",
       "30+ Fitnesskurse pro Woche",
       "Sauna & Wellness auf 250 m²",
+      "Ausdauer-, Functional- & Vibrafit-Training",
       "Getränkeflat",
-      "Functional Training",
+      "Über 130 kostenfreie Parkplätze",
+      "Athletic & Lady Fitness (nur Meinerzhagen)",
+      "Cycling-Kurse (nur Meinerzhagen)",
     ],
+    checkoutUrl: "https://checkout.moresports.io/4016410/landing/club_abo",
   },
   {
     slug: "reha-plus",

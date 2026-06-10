@@ -32,8 +32,9 @@
   --radius-frame: var(--radius-frame);
   --radius-pill: var(--radius-pill);
 
-  --font-display: var(--font-display), "Nunito Sans", system-ui, sans-serif;
-  --font-sans: var(--font-sans), "Montserrat", system-ui, sans-serif;
+  --font-display: var(--font-display), "Fraunces", Georgia, serif;
+  --font-sans: var(--font-sans), "Inter", system-ui, sans-serif;
+  --font-accent: var(--font-accent), "Caveat", cursive;
   --font-mono: var(--font-mono), ui-monospace, "JetBrains Mono", monospace;
 
   --container-max-screen: var(--container-max);
@@ -81,21 +82,23 @@
     margin: 0;
     font-family: var(--font-sans);
     font-size: var(--text-body);
-    line-height: 1.55;
+    line-height: 1.7;
     overflow-x: hidden;
     min-height: 100dvh;
     background: var(--color-bg);
   }
 
+  /* Fraunces 500 — warm-editorial statt black/uppercase (Referenz §3.2).
+     Serif verträgt kaum negatives Tracking, Ascender brauchen Luft. */
   h1,
   h2,
   h3,
   h4,
   h5 {
     font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
     margin: 0;
     text-wrap: balance;
   }
@@ -148,14 +151,17 @@
   .text-display {
     font-size: var(--text-display);
     font-family: var(--font-display);
+    font-weight: 500;
   }
   .text-h1 {
     font-size: var(--text-h1);
     font-family: var(--font-display);
+    font-weight: 500;
   }
   .text-h2 {
     font-size: var(--text-h2);
     font-family: var(--font-display);
+    font-weight: 500;
   }
   .text-h3 {
     font-size: var(--text-h3);

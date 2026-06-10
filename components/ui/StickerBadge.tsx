@@ -29,7 +29,7 @@ export function StickerBadge({ size = 168, className, children, spin = true }: P
           spin && "motion-safe:animate-[spin_24s_linear_infinite]",
         )}
       >
-        <div className="text-center font-display font-black uppercase leading-[1.0] tracking-tight">
+        <div className="text-center font-display font-medium uppercase leading-[1.0] tracking-tight">
           {children}
         </div>
       </div>

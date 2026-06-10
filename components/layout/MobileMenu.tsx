@@ -36,7 +36,7 @@ export function MobileMenu() {
       >
         <div className="flex h-full flex-col">
           <div className="container-grid flex items-center justify-between py-6">
-            <span className="font-display text-lg font-black uppercase tracking-[0.14em]">
+            <span className="font-display text-lg font-medium uppercase tracking-[0.14em]">
               Sportpalast
             </span>
             <button
@@ -55,7 +55,7 @@ export function MobileMenu() {
                   <Link
                     href={g.href ?? "#"}
                     onClick={() => setOpen(false)}
-                    className="flex-1 py-4 font-display text-2xl font-bold uppercase tracking-tight transition-colors hover:text-brand"
+                    className="flex-1 py-4 font-display text-2xl font-medium tracking-tight transition-colors hover:text-brand"
                   >
                     {g.label}
                   </Link>

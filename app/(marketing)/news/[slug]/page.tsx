@@ -73,7 +73,7 @@ const NEWS: Record<string, NewsPost> = {
       "Der Welcome-Workshop ist ein gemeinsamer Einstiegstermin: Hier zeigen euch Franzi und Tobi die wichtigsten Grundschläge, wie man die Hände richtig wickelt und wie das Training in den Folgewochen ablaufen wird. Wer mag, bleibt direkt für die erste reguläre Stunde.",
       "Im Anschluss läuft der Kurs als feste Stunde im Wochenplan. Anmelden müsst ihr euch nicht — einfach pünktlich erscheinen, Sportkleidung und Handtuch reichen. Bandagen leihen wir euch in der ersten Stunde aus.",
     ],
-    cta: { label: "Zum Kursplan", href: "/fitness/kursplan" },
+    cta: { label: "Zum Kursplan", href: "/kursplan" },
   },
 
   "kurs-marathon": {
@@ -126,7 +126,7 @@ export default async function NewsArticle({
           <ArrowLeft size={14} /> Zurück zu News
         </Link>
         <p className="eyebrow mt-10">{post.date}</p>
-        <h1 className="text-h1 mt-4 font-display font-bold">{post.title}</h1>
+        <h1 className="text-h1 mt-4 font-display font-medium">{post.title}</h1>
         <p className="mt-6 text-xl leading-relaxed text-fg">{post.lead}</p>
 
         <div className="mt-10 space-y-5 text-lg leading-relaxed text-fg-muted">

@@ -21,7 +21,7 @@ export function TabNav({ items, activeId, onChange, className, variant = "dark" 
     <div
       role="tablist"
       className={cn(
-        "flex flex-wrap items-end gap-x-8 gap-y-3 border-b font-display text-h4 font-bold uppercase tracking-tight",
+        "flex flex-wrap items-end gap-x-8 gap-y-3 border-b font-display text-h4 font-medium tracking-tight",
         variant === "dark" ? "border-border" : "border-ink-border",
         className,
       )}

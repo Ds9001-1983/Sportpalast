@@ -4,21 +4,13 @@ import { BentoCard } from "@/components/ui/BentoCard";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Pill } from "@/components/ui/Pill";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import type { TopicPage } from "@/lib/content/topic-pages";
 import { cn } from "@/lib/utils/cn";
 import { PageHero } from "./PageHero";
 
 interface Highlight {
   title: string;
   body: string;
-}
-
-interface Props {
-  eyebrow: string;
-  title: string;
-  intro: string;
-  highlights?: Highlight[];
-  body?: string[];
-  cta?: { label: string; href: string };
 }
 
 /**
@@ -36,19 +28,19 @@ function indexLabel(i: number) {
   return String(i + 1).padStart(2, "0");
 }
 
-export function TopicPageTemplate({
-  eyebrow,
-  title,
-  intro,
-  highlights,
-  body,
-  cta,
-}: Props) {
+export function TopicPageTemplate({ page }: { page: TopicPage }) {
+  const { eyebrow, title, intro, image, highlights, body, cta } = page;
   const variant = pickVariant(title, 3);
 
   return (
     <>
-      <PageHero eyebrow={eyebrow} title={title} intro={intro} variant="light" />
+      <PageHero
+        eyebrow={eyebrow}
+        title={title}
+        intro={intro}
+        image={image}
+        variant="light"
+      />
 
       {highlights && highlights.length > 0 && (
         <section
@@ -88,7 +80,7 @@ export function TopicPageTemplate({
                 <div className="relative z-10 flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
                   <div className="max-w-xl">
                     <p className="eyebrow mb-3">Bereit?</p>
-                    <p className="text-h3 font-display font-black uppercase leading-[0.95] tracking-tight">
+                    <p className="text-h3 font-display font-medium leading-[1.05] tracking-tight">
                       Komm vorbei, schau dich um — und finde heraus, ob es passt.
                     </p>
                   </div>
@@ -124,11 +116,11 @@ function Highlights({
         {items.map((h, i) => (
           <RevealOnScroll key={h.title} delay={i * 0.04}>
             <div className="flex gap-5 border-t border-border py-7">
-              <span className="font-display text-3xl font-black leading-none text-accent-dark/80 lg:text-4xl">
+              <span className="font-display text-3xl font-semibold leading-none text-accent-dark/80 lg:text-4xl">
                 {indexLabel(i)}
               </span>
               <div>
-                <h3 className="text-h4 font-display font-black uppercase leading-tight tracking-tight">
+                <h3 className="text-h4 font-display font-medium leading-snug tracking-tight">
                   {h.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg-muted">
@@ -165,7 +157,7 @@ function Highlights({
               </p>
               <h3
                 className={cn(
-                  "mt-4 font-display font-black uppercase leading-tight tracking-tight",
+                  "mt-4 font-display font-medium leading-snug tracking-tight",
                   featured ? "text-h3" : "text-h4",
                 )}
               >

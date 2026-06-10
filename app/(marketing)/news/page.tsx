@@ -77,7 +77,7 @@ export default function NewsPage() {
                       <p className="font-mono text-xs uppercase tracking-[0.18em] text-fg-subtle">
                         {n.date}
                       </p>
-                      <h3 className="text-h4 mt-3 font-display font-bold">
+                      <h3 className="text-h4 mt-3 font-display font-medium">
                         {n.title}
                       </h3>
                       <p className="mt-3 text-sm leading-relaxed text-fg-muted">

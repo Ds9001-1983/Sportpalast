@@ -28,21 +28,21 @@ export function PullQuote() {
               spinning
               className="mx-auto mb-10"
             />
-            <blockquote className="mx-auto max-w-[24ch] text-center font-display text-[clamp(1.75rem,4.5vw,4rem)] font-black uppercase leading-[1.08] tracking-[-0.03em] text-fg">
+            <blockquote className="mx-auto max-w-[24ch] text-center font-display text-[clamp(1.75rem,4.5vw,4rem)] font-medium italic leading-[1.18] tracking-[-0.01em] text-fg">
               <p>
                 {TOKENS.map((t, i) =>
                   typeof t === "string" ? (
                     <span key={i}>{t} </span>
-                  ) : (
+                  ) : TEAM_PHOTOS[t.avatar] ? (
                     <span key={i}>
                       <AvatarChip src={TEAM_PHOTOS[t.avatar]} alt={t.alt} size="lg" />{" "}
                     </span>
-                  ),
+                  ) : null,
                 )}
               </p>
             </blockquote>
-            <p className="mt-12 text-center font-mono text-xs uppercase tracking-[0.22em] text-fg-subtle">
-              — Sinngemäß, Arnold Schwarzenegger
+            <p className="font-accent mt-12 -rotate-1 text-center text-2xl text-accent-dark">
+              — sinngemäß, Arnold Schwarzenegger
             </p>
           </div>
         </RevealOnScroll>

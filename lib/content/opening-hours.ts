@@ -39,8 +39,8 @@ export const HOURS_SAUNA: Record<Weekday, HourRange> = {
   Mittwoch: { open: "11:00", close: "21:30", note: "Damensauna" },
   Donnerstag: { open: "16:00", close: "21:30" },
   Freitag: { open: "11:00", close: "21:30" },
-  Samstag: { open: "09:30", close: "18:30" },
-  Sonntag: { open: "09:30", close: "18:30" },
+  Samstag: { open: "09:30", close: "18:30", note: "je nach Saison" },
+  Sonntag: { open: "09:30", close: "18:30", note: "je nach Saison" },
 };
 
 export const HOLIDAYS: { date: string; label: string; hours: string }[] = [

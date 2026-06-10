@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { BentoCard } from "@/components/ui/BentoCard";
@@ -13,8 +16,14 @@ function currentWeekday(): Weekday {
 }
 
 export function KursplanPreview() {
-  const today = currentWeekday();
-  const slots = SCHEDULE.filter((s) => s.day === today).slice(0, 6);
+  // Der echte Wochentag existiert erst auf dem Client — bei statischem
+  // Pre-Rendering würde new Date() den Build-Tag einfrieren.
+  const [today, setToday] = useState<Weekday | null>(null);
+  useEffect(() => setToday(currentWeekday()), []);
+
+  const slots = (
+    today ? SCHEDULE.filter((s) => s.day === today) : SCHEDULE
+  ).slice(0, 6);
   const lookup = new Map(COURSES.map((c) => [c.slug, c]));
 
   return (
@@ -22,15 +31,17 @@ export function KursplanPreview() {
       <div className="container-grid">
         <div className="mb-12 grid items-end gap-6 md:grid-cols-[1fr_auto]">
           <div>
-            <p className="eyebrow mb-4">Heute · {today}</p>
+            <p className="eyebrow mb-4">
+              {today ? `Heute · ${today}` : "Diese Woche"}
+            </p>
             <SplitHeading
               as="h2"
-              className="text-h1 max-w-[16ch] font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+              className="text-h1 max-w-[16ch] font-display font-medium leading-[1.05] tracking-[-0.01em]"
             >
               Heute schon einen Platz?
             </SplitHeading>
           </div>
-          <Link href="/fitness/kursplan" aria-label="Vollständiger Kursplan">
+          <Link href="/kursplan" aria-label="Vollständiger Kursplan">
             <RoundIconButton
               direction="up-right"
               variant="solid"
@@ -44,7 +55,7 @@ export function KursplanPreview() {
           <BentoCard variant="dark">
             <p className="text-fg-muted">
               Heute finden keine Kurse statt. Schau in den{" "}
-              <Link href="/fitness/kursplan" className="text-[var(--color-accent)] underline">
+              <Link href="/kursplan" className="text-[var(--color-accent)] underline">
                 Wochenplan
               </Link>{" "}
               für die nächsten Termine.
@@ -65,7 +76,7 @@ export function KursplanPreview() {
                   className="group h-full"
                 >
                   <Link
-                    href={`/fitness/kursplan?tag=${s.day.toLowerCase()}`}
+                    href={`/kursplan?tag=${s.day.toLowerCase()}`}
                     className="absolute inset-0"
                     aria-label={`${c.name} ${s.start}`}
                   />
@@ -79,7 +90,7 @@ export function KursplanPreview() {
                       </span>
                     )}
                   </div>
-                  <h3 className="mt-6 text-h4 font-display font-black uppercase leading-tight tracking-tight">
+                  <h3 className="mt-6 text-h4 font-display font-medium leading-snug tracking-tight">
                     {c.name}
                   </h3>
                   <p className="mt-3 line-clamp-2 text-sm text-fg-muted">

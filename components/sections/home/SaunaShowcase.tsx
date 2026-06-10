@@ -30,7 +30,7 @@ export function SaunaShowcase() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">
                   Wellness · 250 m²
                 </span>
-                <span className="font-display text-2xl font-black uppercase leading-tight tracking-tight text-white lg:text-3xl">
+                <span className="font-display text-2xl font-medium leading-snug tracking-tight text-white lg:text-3xl">
                   Wärme, die abschaltet
                 </span>
               </div>
@@ -44,7 +44,7 @@ export function SaunaShowcase() {
               <p className="eyebrow mt-8">Sauna & Wellness</p>
               <SplitHeading
                 as="h2"
-                className="text-h3 mt-4 font-display font-black uppercase leading-[0.95] tracking-[-0.03em]"
+                className="text-h3 mt-4 font-display font-medium leading-[1.05] tracking-[-0.01em]"
               >
                 Indoor, Outdoor & Ruheraum.
               </SplitHeading>
@@ -54,7 +54,7 @@ export function SaunaShowcase() {
               </p>
             </div>
             <div className="mt-10">
-              <MagneticButton href="/sauna" variant="pill-solid">
+              <MagneticButton href="/sauna-wellness" variant="pill-solid">
                 Sauna entdecken <ArrowRight size={14} />
               </MagneticButton>
             </div>

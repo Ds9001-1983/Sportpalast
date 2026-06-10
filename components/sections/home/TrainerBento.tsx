@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Asterisk } from "@/components/ui/Asterisk";
+import { InitialsAvatar } from "@/components/ui/InitialsAvatar";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { TEAM_PHOTOS } from "@/lib/content/media";
@@ -33,13 +34,13 @@ export function TrainerBento() {
             </p>
             <SplitHeading
               as="h2"
-              className="text-h1 max-w-[18ch] font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+              className="text-h1 max-w-[18ch] font-display font-medium leading-[1.05] tracking-[-0.01em]"
             >
               Die Köpfe hinter deinem Training.
             </SplitHeading>
           </div>
           <Link
-            href="/ueber-uns/team"
+            href="/team"
             className="group inline-flex items-center gap-2 self-end font-mono text-xs uppercase tracking-[0.2em] text-fg-muted hover:text-[var(--color-accent)]"
           >
             Ganzes Team
@@ -78,7 +79,7 @@ export function TrainerBento() {
                       : "border-ink-border bg-cream-elevated",
                   )}
                 >
-                  {photo && (
+                  {photo ? (
                     <Image
                       src={photo}
                       alt={m.name}
@@ -86,10 +87,12 @@ export function TrainerBento() {
                       sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
+                  ) : (
+                    <InitialsAvatar name={m.name} />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                   <div className="absolute inset-x-5 bottom-5">
-                    <h3 className="font-display text-xl font-black uppercase leading-tight tracking-tight text-white lg:text-2xl">
+                    <h3 className="font-display text-xl font-medium leading-snug tracking-tight text-white lg:text-2xl">
                       {m.name}
                     </h3>
                     <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/70">

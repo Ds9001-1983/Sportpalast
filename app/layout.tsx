@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito_Sans, Montserrat, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, Caveat, JetBrains_Mono } from "next/font/google";
 import { LenisProvider } from "@/components/animations/LenisProvider";
 import { SoundProvider } from "@/components/providers/SoundProvider";
 import { SoundToggle } from "@/components/layout/SoundToggle";
@@ -7,17 +7,24 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { LocalBusinessJsonLd } from "@/lib/schema";
 import "./globals.css";
 
-const display = Nunito_Sans({
+// Typografie laut Referenz §3.2: Fraunces (Display-Serif, warm-editorial),
+// Inter (Body/UI), Caveat (handschriftlicher Akzent).
+const display = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700", "900"],
   variable: "--font-display",
+  display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
   display: "swap",
 });
 
-const sans = Montserrat({
+const accent = Caveat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
+  variable: "--font-accent",
   display: "swap",
 });
 
@@ -69,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable} ${accent.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
       <body className="bg-bg text-fg antialiased">

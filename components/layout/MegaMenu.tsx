@@ -59,7 +59,7 @@ function Panel({ group, visible }: { group: NavGroup; visible: boolean }) {
       role="region"
       aria-hidden={!visible}
       className={cn(
-        "absolute left-1/2 top-full z-50 mt-3 w-[min(720px,90vw)] -translate-x-1/2 origin-top rounded-3xl border border-border bg-bg-elevated/95 p-8 shadow-2xl backdrop-blur transition-[opacity,transform] duration-200",
+        "absolute left-1/2 top-full z-[55] mt-3 w-[min(720px,90vw)] -translate-x-1/2 origin-top rounded-3xl border border-border bg-bg-elevated/95 p-8 shadow-2xl backdrop-blur transition-[opacity,transform] duration-200",
         visible
           ? "pointer-events-auto opacity-100 translate-y-0"
           : "pointer-events-none opacity-0 -translate-y-2",

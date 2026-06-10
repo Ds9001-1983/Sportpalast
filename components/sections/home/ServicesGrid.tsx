@@ -34,14 +34,14 @@ const items = [
   {
     title: "Fitnesskurse",
     body: "Über 30 Kurse pro Woche — von Yoga bis HOT IRON™.",
-    href: "/fitness/fitnesskurse",
+    href: "/kurse",
     icon: Flame,
     image: IMG.courses,
   },
   {
     title: "Sauna & Wellness",
     body: "250 m² Wellness. Indoor- & Outdoor-Sauna, Ruheraum, Terrasse.",
-    href: "/sauna",
+    href: "/sauna-wellness",
     icon: Bath,
     image: IMG.sauna,
   },
@@ -55,7 +55,7 @@ const items = [
   {
     title: "Rehasport",
     body: "Verordneter Rehasport. 100 % Kassenleistung. Sofort starten.",
-    href: "/gesundheit/rehasport",
+    href: "/rehasport",
     icon: GraduationCap,
     image: IMG.rehasport,
   },
@@ -70,7 +70,7 @@ export function ServicesGrid() {
             <p className="eyebrow mb-4">Was dich erwartet</p>
             <SplitHeading
               as="h2"
-              className="text-h1 max-w-[18ch] font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+              className="text-h1 max-w-[18ch] font-display font-medium leading-[1.05] tracking-[-0.01em]"
             >
               Alles unter einem Dach.
             </SplitHeading>
@@ -118,7 +118,7 @@ export function ServicesGrid() {
                   strokeWidth={1.4}
                 />
                 <div className="relative">
-                  <h3 className="text-h3 font-display font-black uppercase leading-tight tracking-tight transition-colors duration-300 group-hover:text-white">
+                  <h3 className="text-h3 font-display font-medium leading-snug tracking-tight transition-colors duration-300 group-hover:text-white">
                     {it.title}
                   </h3>
                   <p className="mt-3 max-w-xs text-sm leading-relaxed text-fg-muted transition-colors duration-300 group-hover:text-white/80">

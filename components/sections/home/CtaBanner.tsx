@@ -17,18 +17,18 @@ export function CtaBanner() {
             />
             <SplitHeading
               as="h2"
-              className="text-display max-w-[18ch] font-display font-black uppercase leading-[0.9] tracking-[-0.04em]"
+              className="text-display max-w-[18ch] font-display font-medium leading-[1.02] tracking-[-0.01em]"
             >
               Hol dir deinen Fit Lifestyle — einfach und gut gelaunt.
             </SplitHeading>
           </div>
-          <Link href="/mitglied-werden" aria-label="Mitglied werden">
+          <Link href="/probetraining" aria-label="Probetraining vereinbaren">
             <RoundIconButton
               direction="up-right"
               variant="outline"
               surface="dark"
               size="lg"
-              ariaLabel="Mitglied werden"
+              ariaLabel="Probetraining vereinbaren"
               className="size-24 border-dashed hover:border-solid"
             />
           </Link>
@@ -40,14 +40,14 @@ export function CtaBanner() {
           </p>
           <div className="flex flex-wrap items-center gap-3 lg:justify-end">
             <Link
-              href="/mitglied-werden"
-              className="inline-flex items-center gap-2 rounded-pill bg-accent px-7 py-3.5 font-display text-sm font-bold uppercase tracking-[0.12em] text-white hover:bg-accent-bright"
+              href="/mitgliedschaft"
+              className="inline-flex items-center gap-2 rounded-pill bg-accent px-7 py-3.5 font-sans text-sm font-medium uppercase tracking-[0.12em] text-white hover:bg-accent-bright"
             >
               Mitglied werden <ArrowUpRight size={16} />
             </Link>
             <Link
-              href="/kontakt"
-              className="inline-flex items-center gap-2 rounded-pill border border-border-strong px-7 py-3.5 font-display text-sm font-bold uppercase tracking-[0.12em] text-fg hover:border-accent hover:text-accent"
+              href="/probetraining"
+              className="inline-flex items-center gap-2 rounded-pill border border-border-strong px-7 py-3.5 font-sans text-sm font-medium uppercase tracking-[0.12em] text-fg hover:border-accent hover:text-accent"
             >
               Probetraining buchen
             </Link>

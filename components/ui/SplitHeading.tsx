@@ -72,7 +72,11 @@ export function SplitHeading({
       className={cn("inline-block", className)}
     >
       {words.map((word, i) => (
-        <span key={i} className="inline-flex overflow-hidden align-baseline">
+        <span
+          key={i}
+          // pb/-mb: Maske kappt sonst Serif-Unterlängen (Fraunces g, j, y)
+          className="inline-flex overflow-hidden pb-[0.12em] -mb-[0.12em] align-baseline"
+        >
           <span
             data-word
             className="inline-block opacity-0 transition-[transform,opacity] duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)]"

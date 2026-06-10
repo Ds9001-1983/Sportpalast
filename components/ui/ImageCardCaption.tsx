@@ -52,7 +52,7 @@ export function ImageCardCaption({
             {eyebrow}
           </span>
         )}
-        <span className="font-display text-lg font-black uppercase leading-tight tracking-tight text-white lg:text-2xl">
+        <span className="font-display text-lg font-medium leading-snug tracking-tight text-white lg:text-2xl">
           {caption}
         </span>
       </div>

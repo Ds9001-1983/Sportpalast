@@ -3,7 +3,11 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { KontaktForm } from "@/components/sections/kontakt/KontaktForm";
 import { MapEmbed } from "@/components/sections/kontakt/MapEmbed";
-import { CONTACT } from "@/lib/content/contact";
+import {
+  CONTACT,
+  CONTACT_CATEGORIES,
+  type ContactCategory,
+} from "@/lib/content/contact";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -11,7 +15,21 @@ export const metadata: Metadata = {
     "Schreib uns, ruf an, oder komm einfach vorbei. Schlosserstraße 33, 51789 Lindlar.",
 };
 
-export default function KontaktPage() {
+// ?kategorie=rehasport o. Ä. wählt die Formular-Kategorie vor (Deep-Links
+// von Rehasport-/Physio-Seiten, Conversion-Pfad §4.3).
+function resolveCategory(raw?: string): ContactCategory | undefined {
+  if (!raw) return undefined;
+  return CONTACT_CATEGORIES.find((c) => c.toLowerCase() === raw.toLowerCase());
+}
+
+export default async function KontaktPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ kategorie?: string }>;
+}) {
+  const params = await searchParams;
+  const initialCategory = resolveCategory(params.kategorie);
+
   return (
     <>
       <PageHero
@@ -23,10 +41,10 @@ export default function KontaktPage() {
       <section className="pb-32">
         <div className="container-grid grid gap-16 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h2 className="text-h3 mb-8 font-display font-black uppercase leading-tight tracking-tight">
+            <h2 className="text-h3 mb-8 font-display font-medium leading-snug tracking-tight">
               Schreib uns eine Nachricht
             </h2>
-            <KontaktForm />
+            <KontaktForm initialCategory={initialCategory} />
           </div>
 
           <aside className="space-y-10">

@@ -17,13 +17,13 @@ export function Hero() {
             <Pill dot variant="light">
               Seit 2004 · Lindlar
             </Pill>
-            <span className="hidden font-mono text-xs uppercase tracking-[0.3em] text-ink-subtle sm:inline">
+            <span className="font-accent hidden -rotate-2 text-2xl text-accent-dark sm:inline">
               Training mit Aussicht
             </span>
           </div>
 
           {/* Pre-Headline */}
-          <p className="mt-10 font-display text-sm font-bold uppercase tracking-[0.18em] text-ink-muted lg:text-base">
+          <p className="mt-10 font-sans text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted lg:text-base">
             Dein Weg. Dein Ziel. Unser Support.
           </p>
           <div className="mt-2 border-t border-ink-border" />
@@ -32,7 +32,7 @@ export function Hero() {
           <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
             <SplitHeading
               as="h1"
-              className="max-w-[14ch] font-display text-[clamp(2.75rem,9vw,8rem)] font-black uppercase leading-[0.93] tracking-[-0.04em]"
+              className="max-w-[14ch] font-display text-[clamp(2.75rem,9vw,8rem)] font-medium leading-[1.02] tracking-[-0.01em]"
             >
               Training mit Aussicht — für deine beste Form.
             </SplitHeading>
@@ -50,8 +50,11 @@ export function Hero() {
               Kurse pro Woche, EGYM Smart Strength, Sauna & Wellness — und eine
               Physiotherapie unter dem gleichen Dach.
             </p>
-            <MagneticButton href="/mitglied-werden" variant="pill-solid">
+            <MagneticButton href="/probetraining" variant="pill-solid">
               Probetraining <ArrowRight size={16} />
+            </MagneticButton>
+            <MagneticButton href="/mitgliedschaft" variant="pill-ink">
+              Mitglied werden
             </MagneticButton>
           </div>
 
@@ -80,10 +83,10 @@ export function Hero() {
             <div className="inline-flex size-10 items-center justify-center rounded-full bg-ink text-cream">
               <Smile size={20} strokeWidth={1.6} />
             </div>
-            <span className="inline-flex items-center rounded-full bg-[var(--color-accent)] px-5 py-2 font-display text-sm font-black uppercase tracking-tight text-white">
+            <span className="inline-flex items-center rounded-full bg-[var(--color-accent)] px-5 py-2 font-sans text-sm font-semibold uppercase tracking-wide text-white">
               950+ Mitglieder
             </span>
-            <span className="inline-flex items-center rounded-full bg-ink px-5 py-2 font-display text-sm font-black uppercase tracking-tight text-cream">
+            <span className="inline-flex items-center rounded-full bg-ink px-5 py-2 font-sans text-sm font-semibold uppercase tracking-wide text-cream">
               Glückliche Gesichter
             </span>
           </div>

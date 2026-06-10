@@ -1,4 +1,5 @@
 import { Asterisk } from "@/components/ui/Asterisk";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { Pill } from "@/components/ui/Pill";
 import { SplitHeading } from "@/components/ui/SplitHeading";
 import { cn } from "@/lib/utils/cn";
@@ -8,9 +9,17 @@ type Props = {
   title: string;
   intro?: string;
   variant?: "light" | "dark";
+  /** Optionaler Editorial-Aufmacher unter dem Text-Frame (§3.3 große Bildflächen). */
+  image?: { src: string; alt: string };
 };
 
-export function PageHero({ eyebrow, title, intro, variant = "light" }: Props) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+  variant = "light",
+  image,
+}: Props) {
   const isLight = variant === "light";
 
   return (
@@ -32,7 +41,7 @@ export function PageHero({ eyebrow, title, intro, variant = "light" }: Props) {
               <div className="mt-6">
                 <SplitHeading
                   as="h1"
-                  className="text-h1 font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+                  className="text-h1 font-display font-medium leading-[1.05] tracking-[-0.01em]"
                 >
                   {title}
                 </SplitHeading>
@@ -55,6 +64,16 @@ export function PageHero({ eyebrow, title, intro, variant = "light" }: Props) {
             />
           </div>
         </div>
+
+        {image && (
+          <ParallaxImage
+            src={image.src}
+            alt={image.alt}
+            priority
+            sizes="(min-width: 1280px) 1216px, 100vw"
+            className="mt-4 aspect-[4/3] rounded-frame border border-border sm:aspect-[16/9] lg:aspect-[21/9]"
+          />
+        )}
       </div>
     </section>
   );

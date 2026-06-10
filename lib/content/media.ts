@@ -82,4 +82,12 @@ export const TEAM_PHOTOS: Record<string, string> = {
   "marie-bork": `${GEN}/team/marie-bork.jpg`,
   "jil-kamml": `${GEN}/team/jil-kamml.jpg`,
   "wolfgang-feykens": `${GEN}/team/wolfgang-feykens.jpg`,
+  "doris-meisel": `${GEN}/team/doris-meisel.jpg`,
+  "kerstin-klein": `${GEN}/team/kerstin-klein.jpg`,
+  "christina-sauer": `${GEN}/team/christina-sauer.jpg`,
+  "katja-luedenbach": `${GEN}/team/katja-luedenbach.jpg`,
+  "marija": `${GEN}/team/marija.jpg`,
+  "axel-lukas": `${GEN}/team/axel-lukas.jpg`,
+  "thomas-rixgens-luedenbach": `${GEN}/team/thomas-rixgens-luedenbach.jpg`,
+  "manni": `${GEN}/team/manni.jpg`,
 };

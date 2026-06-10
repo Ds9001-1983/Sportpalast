@@ -52,7 +52,7 @@ export default function GaleriePage() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-xs uppercase tracking-[0.2em] text-white transition-colors">
-                    <span className="font-display font-black tracking-tight">{img.alt}</span>
+                    <span className="font-display font-medium tracking-tight">{img.alt}</span>
                     <span className="font-mono text-white/60">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -69,7 +69,7 @@ export default function GaleriePage() {
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
               <p className="eyebrow mb-3">Virtueller Rundgang</p>
-              <h2 className="text-h2 max-w-[18ch] font-display font-black uppercase leading-[0.92] tracking-[-0.04em]">
+              <h2 className="text-h2 max-w-[18ch] font-display font-medium leading-[1.05] tracking-[-0.01em]">
                 Lauf durch den Glaspalast — von zu Hause.
               </h2>
             </div>

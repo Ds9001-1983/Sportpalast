@@ -6,6 +6,9 @@ export interface ScheduleSlot {
   end: string;
   courseSlug: string;
   note?: string;
+  /** Slug aus lib/content/team.ts — Zuordnung muss vom Studio kommen.
+   *  Der Trainer:innen-Filter im Kursplan zeigt nur belegte Werte. */
+  trainerSlug?: string;
 }
 
 export const SCHEDULE: ScheduleSlot[] = [
@@ -18,15 +21,18 @@ export const SCHEDULE: ScheduleSlot[] = [
   { day: "Montag", start: "20:00", end: "21:15", courseSlug: "ashtanga-yoga" },
 
   // Dienstag
+  // TODO(Studio): Yin Yoga (09:00–10:30) und Zirkel Training (09:15–10:00)
+  // überschneiden sich — laufen beide parallel in getrennten Räumen, oder
+  // stimmt eine der Zeiten nicht? Mit dem Kursplan des Studios abgleichen.
   { day: "Dienstag", start: "09:00", end: "10:30", courseSlug: "yin-yoga" },
   { day: "Dienstag", start: "09:15", end: "10:00", courseSlug: "zirkel-training" },
   { day: "Dienstag", start: "10:30", end: "11:15", courseSlug: "rehasport" },
-  { day: "Dienstag", start: "15:00", end: "16:00", courseSlug: "wingtsun", note: "Kinder" },
-  { day: "Dienstag", start: "16:00", end: "17:00", courseSlug: "wingtsun", note: "Jugendliche" },
+  { day: "Dienstag", start: "15:00", end: "16:00", courseSlug: "wingtsun", note: "Kinder", trainerSlug: "axel-lukas" },
+  { day: "Dienstag", start: "16:00", end: "17:00", courseSlug: "wingtsun", note: "Jugendliche", trainerSlug: "axel-lukas" },
   { day: "Dienstag", start: "17:00", end: "18:00", courseSlug: "zumba" },
   { day: "Dienstag", start: "18:00", end: "19:00", courseSlug: "energetic-flow-yoga" },
   { day: "Dienstag", start: "19:00", end: "20:00", courseSlug: "functional-training" },
-  { day: "Dienstag", start: "20:00", end: "21:00", courseSlug: "wingtsun", note: "Erwachsene" },
+  { day: "Dienstag", start: "20:00", end: "21:00", courseSlug: "wingtsun", note: "Erwachsene", trainerSlug: "axel-lukas" },
 
   // Mittwoch
   { day: "Mittwoch", start: "09:00", end: "10:00", courseSlug: "ruecken-relax" },

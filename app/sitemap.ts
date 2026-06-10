@@ -6,18 +6,25 @@ const BASE = "https://www.sportpalast-lindlar.de";
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = new Set<string>([
     "/",
-    "/preise",
-    "/mitglied-werden",
+    "/mitgliedschaft",
+    "/probetraining",
     "/kontakt",
     "/ueber-uns",
-    "/ueber-uns/team",
+    "/team",
     "/oeffnungszeiten",
     "/news",
     "/galerie",
+    "/karriere",
+    "/hausordnung",
     "/impressum",
     "/datenschutz",
-    "/sauna",
+    "/sauna-wellness",
     "/physiotherapie",
+    "/rehasport",
+    "/firmenfitness",
+    "/kurse",
+    "/kursplan",
+    "/gesundheitsziele",
   ]);
 
   NAVIGATION.forEach((g) => {

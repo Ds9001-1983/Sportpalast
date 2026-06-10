@@ -38,7 +38,7 @@ export function NewsTeaser() {
             <p className="eyebrow mb-4">News</p>
             <SplitHeading
               as="h2"
-              className="text-h1 max-w-[16ch] font-display font-black uppercase leading-[0.92] tracking-[-0.04em]"
+              className="text-h1 max-w-[16ch] font-display font-medium leading-[1.05] tracking-[-0.01em]"
             >
               Was bei uns passiert.
             </SplitHeading>
@@ -72,7 +72,7 @@ export function NewsTeaser() {
                   <p className="font-mono text-xs uppercase tracking-[0.18em] text-fg-subtle">
                     {n.date}
                   </p>
-                  <h3 className="mt-4 text-h4 font-display font-black uppercase leading-tight tracking-tight">
+                  <h3 className="mt-4 text-h4 font-display font-medium leading-snug tracking-tight">
                     {n.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-fg-muted">

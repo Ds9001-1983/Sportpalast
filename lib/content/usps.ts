@@ -4,7 +4,7 @@ export const MARQUEE_ITEMS = [
   "30+ Kurse pro Woche",
   "250 m² Sauna & Wellness",
   "Physiotherapie integriert",
-  "120+ kostenlose Parkplätze",
+  "Über 130 kostenfreie Parkplätze",
   "EGYM Smart Strength",
   "Rehasport mit 100 % Kassenleistung",
 ];

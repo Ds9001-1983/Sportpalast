@@ -83,7 +83,7 @@ export default function UeberUnsPage() {
           <RevealOnScroll>
             <div>
               <p className="eyebrow mb-4">Unser Anspruch</p>
-              <h2 className="text-h2 max-w-[16ch] font-display font-bold">
+              <h2 className="text-h2 max-w-[16ch] font-display font-medium">
                 Mehr als ein Fitnessstudio.
               </h2>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-fg-muted">
@@ -117,7 +117,7 @@ export default function UeberUnsPage() {
                 { value: 20, suffix: "+", label: "Team-Mitglieder" },
               ].map((s) => (
                 <li key={s.label} className="bg-bg-elevated p-8">
-                  <p className="font-display text-5xl font-black">
+                  <p className="font-display text-5xl font-semibold">
                     <NumberCounter to={s.value} />
                     {s.suffix}
                   </p>
@@ -132,7 +132,7 @@ export default function UeberUnsPage() {
       <section className="relative overflow-hidden py-24 lg:py-32">
         <div className="container-grid">
           <p className="eyebrow mb-4">Werte</p>
-          <h2 className="text-h2 mb-12 max-w-[20ch] font-display font-bold">
+          <h2 className="text-h2 mb-12 max-w-[20ch] font-display font-medium">
             Vier Sätze, an denen wir uns festhalten lassen.
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -142,7 +142,7 @@ export default function UeberUnsPage() {
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-dark">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="text-h4 mt-3 font-display font-bold">
+                  <h3 className="text-h4 mt-3 font-display font-medium">
                     {v.title}
                   </h3>
                   <p className="mt-3 text-fg-muted">{v.body}</p>
@@ -156,7 +156,7 @@ export default function UeberUnsPage() {
       <section className="py-24 lg:py-32">
         <div className="container-grid">
           <p className="eyebrow mb-4">Unsere Geschichte</p>
-          <h2 className="text-h2 mb-16 max-w-[18ch] font-display font-bold">
+          <h2 className="text-h2 mb-16 max-w-[18ch] font-display font-medium">
             Über 20 Jahre Sportpalast — in sechs Stationen.
           </h2>
           <ol className="relative space-y-12 border-l border-border-strong pl-8">
@@ -170,7 +170,7 @@ export default function UeberUnsPage() {
                   <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent-dark">
                     {t.year}
                   </p>
-                  <h3 className="text-h4 mt-2 font-display font-bold">
+                  <h3 className="text-h4 mt-2 font-display font-medium">
                     {t.title}
                   </h3>
                   <p className="mt-3 max-w-2xl text-fg-muted">{t.body}</p>
@@ -184,7 +184,7 @@ export default function UeberUnsPage() {
       <section className="py-24">
         <div className="container-grid">
           <p className="eyebrow mb-4">Geschäftsführung</p>
-          <h2 className="text-h2 mb-12 max-w-[18ch] font-display font-bold">
+          <h2 className="text-h2 mb-12 max-w-[18ch] font-display font-medium">
             Die Köpfe hinter dem Sportpalast.
           </h2>
           <div className="grid gap-4 md:grid-cols-3">
@@ -221,7 +221,7 @@ export default function UeberUnsPage() {
           </div>
           <div className="mt-12">
             <Link
-              href="/ueber-uns/team"
+              href="/team"
               className="group inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent"
             >
               Gesamtes Team kennenlernen

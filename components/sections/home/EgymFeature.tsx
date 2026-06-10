@@ -30,7 +30,7 @@ export function EgymFeature() {
           <p className="eyebrow mb-4">Unsere Trainings-Spotlights</p>
           <SplitHeading
             as="h2"
-            className="text-h1 mx-auto max-w-[18ch] font-display font-black uppercase leading-[0.9] tracking-[-0.04em]"
+            className="text-h1 mx-auto max-w-[18ch] font-display font-medium leading-[1.02] tracking-[-0.01em]"
           >
             Training, das sich anpasst.
           </SplitHeading>
@@ -38,7 +38,7 @@ export function EgymFeature() {
 
         {/* Tab-Nav (rein visuell active = EGYM) */}
         <ul
-          className="flex flex-wrap items-end justify-center gap-x-8 gap-y-3 border-b border-border pb-0 font-display font-bold uppercase tracking-tight"
+          className="flex flex-wrap items-end justify-center gap-x-8 gap-y-3 border-b border-border pb-0 font-display font-medium tracking-tight"
           aria-label="Trainings-Kategorien"
         >
           {tabs.map((t) => (
@@ -76,7 +76,7 @@ export function EgymFeature() {
           </RevealOnScroll>
 
           <div>
-            <h3 className="text-h2 max-w-[14ch] font-display font-black uppercase leading-[0.92] tracking-[-0.03em]">
+            <h3 className="text-h2 max-w-[14ch] font-display font-medium leading-[1.05] tracking-[-0.01em]">
               EGYM Smart Strength
             </h3>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-fg-muted">
